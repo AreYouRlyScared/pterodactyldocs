@@ -16,13 +16,13 @@ module.exports = {
       links: [
         {
           to: 'docs/panel/getting_started',
-          activeBasePath: 'versioned_docs/version-0.7/panel',
+          activeBasePath: 'docs/panel',
           label: 'Documentation',
           position: 'right',
         },
         {
           to: 'docs/community/about',
-          activeBasePath: 'docs',
+          activeBasePath: 'docs/community',
           label: 'Community Guides',
           position: 'right',
         },

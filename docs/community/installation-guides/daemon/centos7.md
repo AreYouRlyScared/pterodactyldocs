@@ -3,7 +3,7 @@ In this guide we will install Pterodactyl's Daemon v0.6.X — including all of i
 
 [[toc]]
 
-:::tip
+:::note
 This guide is based off the [official installation documentation](/daemon/installing.md) but is tailored specifically for CentOS 7.
 :::
 

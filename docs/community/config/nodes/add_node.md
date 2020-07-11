@@ -24,7 +24,7 @@ then this option should be selected. If none of that sentence made sense, this d
 * **Server File Directory**: the location on the physical server where the daemon is to store the files the servers
 generate. By default this is `/srv/daemon-data`.
 
-:::tip OVH Users
+:::note OVH Users
 Some OVH users regularly have their `/home` folder be the largest filesystem. You may want to change to use
 `/home/daemon-data` if you are on a default OVH box.
 :::
@@ -35,7 +35,7 @@ limit, with a 20% overallocation the Panel will allocate up to 12G of memory on 
 * **Total Disk Space**: the totaly amount of ram the Node should be able to allocate automatically.
 * **Disk Overallocate**: works the same way as memory overallocation.
 
-:::danger
+:::caution
 Don't forget to account for OS overhead and other software requirements on machines.
 ::: 
 

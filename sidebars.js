@@ -1,11 +1,6 @@
 module.exports = {
   someSidebar: {
-    "Project Information": [
-      "project/introduction",
-      "project/about",
-      "project/terminology",
-      "project/community_standards",
-    ],
+    "Project Information": ["project/introduction", "project/about", "project/terminology", "project/community_standards"],
     Panel: [
       {
         collapsed: true,

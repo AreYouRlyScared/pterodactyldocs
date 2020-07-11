@@ -1,7 +1,30 @@
 {
   "version-0.7/someSidebar": [
     {
-      "collapsed": true,
+      "collapsed": false,
+      "type": "category",
+      "label": "Project Information",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-0.7/project/introduction"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.7/project/about"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.7/project/terminology"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.7/project/community_standards"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
       "type": "category",
       "label": "Panel",
       "items": [
@@ -43,7 +66,7 @@
       ]
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "type": "category",
       "label": "Daemon",
       "items": [

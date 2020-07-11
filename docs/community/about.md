@@ -1,5 +1,7 @@
-# Community Guides and Tutorials
-
+---
+id: about
+title: Community Guides and tutorials
+---
 ## About
 This section of Pterodactyl's site is dedicated to more complex topics, tutorials, and features that we
 feel are important to share with the community, but do not fit into the theme of our core documentation.

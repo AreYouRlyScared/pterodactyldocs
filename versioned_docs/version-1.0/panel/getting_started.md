@@ -98,7 +98,7 @@ chmod -R 755 storage/* bootstrap/cache/
 ## Installation
 Now that all of the files have been downloaded we need to configure some core aspects of the Panel.
 
-:::tip Database Configuration
+:::note Database Configuration
 You will need a database setup and a user with the correct permissions created for that database before
 continuing any further. If you are unsure how to do this, please have a look at [Setting up MySQL](/tutorials/mysql_setup.html).
 :::

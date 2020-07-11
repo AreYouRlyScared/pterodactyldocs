@@ -1,7 +1,30 @@
 {
   "version-1.0/someSidebar": [
     {
-      "collapsed": true,
+      "collapsed": false,
+      "type": "category",
+      "label": "Project Information",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0/project/introduction"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/project/about"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/project/terminology"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/project/community_standards"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
       "type": "category",
       "label": "Panel",
       "items": [
@@ -14,23 +37,37 @@
           "id": "version-1.0/panel/webserver_configuration"
         },
         {
-          "type": "doc",
-          "id": "version-1.0/panel/upgrade_panel"
+          "collapsed": true,
+          "type": "category",
+          "label": "Upgrading",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0/panel/upgrade/upgrade_panel"
+            }
+          ]
         }
       ]
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "type": "category",
-      "label": "Wings",
+      "label": "Daemon",
       "items": [
         {
           "type": "doc",
           "id": "version-1.0/wings/install_wings"
         },
         {
-          "type": "doc",
-          "id": "version-1.0/wings/upgrade_wings"
+          "collapsed": true,
+          "type": "category",
+          "label": "Upgrading",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0/wings/upgrade_wings"
+            }
+          ]
         }
       ]
     }
