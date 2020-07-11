@@ -1,0 +1,38 @@
+{
+  "version-1.0/someSidebar": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Panel",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0/panel/getting_started"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/panel/webserver_configuration"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/panel/upgrade_panel"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Wings",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0/wings/install_wings"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/wings/upgrade_wings"
+        }
+      ]
+    }
+  ]
+}

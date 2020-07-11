@@ -3,30 +3,88 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "Docusaurus",
+      "label": "Panel",
       "items": [
         {
           "type": "doc",
-          "id": "version-0.7/doc1"
+          "id": "version-0.7/panel/getting_started"
         },
         {
           "type": "doc",
-          "id": "version-0.7/doc2"
+          "id": "version-0.7/panel/webserver_configuration"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Upgrading",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-0.7/panel/upgrade/0.6_0.7"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.7/panel/upgrade/0.7.x"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.7/panel/upgrade/0.7_1.0"
+            }
+          ]
         },
         {
           "type": "doc",
-          "id": "version-0.7/doc3"
+          "id": "version-0.7/panel/environment_configuration"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.7/panel/troubleshooting"
         }
       ]
     },
     {
       "collapsed": true,
       "type": "category",
-      "label": "Features",
+      "label": "Daemon",
       "items": [
         {
           "type": "doc",
-          "id": "version-0.7/mdx"
+          "id": "version-0.7/daemon/installing"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Upgrading",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-0.7/daemon/upgrade/0.4_0.5"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.7/daemon/upgrade/0.5.x"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.7/daemon/upgrade/0.5_0.6"
+            },
+            {
+              "type": "doc",
+              "id": "version-0.7/daemon/upgrade/0.6.x"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "version-0.7/daemon/additional_configuration"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.7/daemon/debian_8_docker"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.7/daemon/standalone_sftp"
         }
       ]
     }

@@ -70,8 +70,8 @@ function Feature({imgUrl, title, description}) {
   return (
     <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
-        <div>
-          Testing
+        <div className="text--center">
+          ICONS HERE :P
         </div>
       )}
       <h2>{title}</h2>
@@ -98,13 +98,13 @@ function Home() {
               )}
               to={useBaseUrl('https://demo.pterodactyl.io/')}>
               Demo
-            </Link>
+            </Link>&nbsp;&nbsp;&nbsp;
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/panel/0.7/getting_started')}>
+              to={useBaseUrl('docs/panel/getting_started')}>
               Get Started
             </Link>
           </div>
