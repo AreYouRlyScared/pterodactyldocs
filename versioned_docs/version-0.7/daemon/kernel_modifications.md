@@ -29,7 +29,7 @@ sudo reboot
 Once you've rebooted, check that the latest kernel is installed using `uname -r`, it should output `4.4.0-131-generic`
 (in this case) or similar.
 
-:::warning
+:::caution
 If it still includes `-xxxx-grs-ipv6-64` or similar, it didn't work and you should move on top the steps below.
 :::
 

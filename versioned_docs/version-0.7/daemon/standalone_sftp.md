@@ -3,7 +3,7 @@ id: standalone_sftp
 title: Standalone SFTP Server
 sidebar_label: Standalone SFTP Server
 ---
-:::warning
+:::caution
 Standalone SFTP support was introduced in `Panel@v0.7.11` and `Daemon@v0.6.8` and will not work with prior versions.
 :::
 

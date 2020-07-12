@@ -3,7 +3,7 @@ id: additional_configuration
 title: Additional Configuration
 sidebar_label: Additional Configuration
 ---
-:::warning
+:::caution
 These are advanced configurations for the daemon. You risk breaking your daemon and making containers un-usable if
 you modify something incorrectly. Proceed at your own risk, and only if you know what each configuration value does.
 :::
@@ -48,7 +48,7 @@ can do so by modifying the `core.json` file for the daemon. In most cases you'll
 name to allow your servers to use the host network stack. To do so, just change `docker.network.name` to be `host`
 rather than `pterodactyl_nw` as shown below.
 
-:::warning
+:::caution
 While changing to the host network stack does allow servers running on Pterodactyl to have direct access to local
 interfaces and bind to specific IP addresses (required for some Steam games), it is not recommended on public
 installations of Pterodactyl (where you have other users running servers).
@@ -131,7 +131,7 @@ Please note that all of the settings above are in the `docker.policy.container.X
 
 ### Default Capabilities Drop Array
 
-:::warning
+:::caution
 Starting with `v0.6` of the Daemon, the following previously _dropped_ capabilities are available in containers: `chown`, `kill`, `setgid`, and `setuid`.
 :::
 

@@ -47,7 +47,7 @@ php artisan p:user:delete {--user=username/email/UUID}
 
 ### Disable 2FA
 
-:::warning
+:::caution
 Disabling 2-factor authentication should only be used as a last restort for user recovery. **Please use this with caution.**
 :::
 

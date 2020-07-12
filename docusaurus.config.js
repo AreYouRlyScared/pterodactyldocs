@@ -45,22 +45,25 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
+          homePageId: 'project/introduction',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],
+  ],
+  plugins: [
+    [require.resolve('@cmfcmf/docusaurus-search-local'), 
+      {
+        docsBasePath: '/docs',
+        indexDocs: true,
+        indexPages: true,
+        language: 'en'
+    }]
   ],
 };

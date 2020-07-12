@@ -5,12 +5,12 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
-//import LineIcon from 'react-lineicons';
+import { GoLock } from "react-icons/go"
 
 const features = [
   {
     title: <>Security First</>,
-    imgUrl: 'lock',
+    icon: '',
     description: (
       <>
         Security is a first-class citizen on this platform with bcrypt hashing, AES-256-CBC encryption, and HTTPS support out of the box.
@@ -19,7 +19,7 @@ const features = [
   },
   {
     title: <>Modern Tooling</>,
-    imgUrl: 'layout',
+    icon: 'GoBeaker',
     description: (
       <>
         Built on a modern stack utilizing the best design practices that make it easy to jump in and make modifications.
@@ -28,7 +28,7 @@ const features = [
   },
   {
     title: <>Docker to the Core</>,
-    imgUrl: 'anchor',
+    icon: 'anchor',
     description: (
       <>
         All servers run in isolated Docker containers that limit attack vectors, provide strict resource limits, and provide environments tailored to each specific game.
@@ -37,7 +37,7 @@ const features = [
   },
   {
     title: <>Free & Open Source</>,
-    imgUrl: 'wallet',
+    icon: 'wallet',
     description: (
       <>
         Pterodactyl is 100% free and licensed under a MIT license. 
@@ -47,7 +47,7 @@ const features = [
   },
   {
     title: <>User Friendly</>,
-    imgUrl: 'display',
+    icon: 'GoDeviceDesktop',
     description: (
       <>
         Save the furious clicking and screaming for Overwatch. 
@@ -57,7 +57,7 @@ const features = [
   },
   {
     title: <>Scalable</>,
-    imgUrl: 'full-screen',
+    icon: 'GoServer',
     description: (
       <>
         Whether you're a hosting company, the next Hyplex, or just some dudes playing video games, we've got you covered.
@@ -66,12 +66,12 @@ const features = [
   },
 ];
 
-function Feature({imgUrl, title, description}) {
+function Feature({icon, title, description}) {
   return (
     <div className={clsx('col col--4', styles.feature)}>
-      {imgUrl && (
+      {icon && (
         <div className="text--center">
-          ICONS HERE :P
+          {icon}
         </div>
       )}
       <h2>{title}</h2>

@@ -109,7 +109,7 @@ servers `/etc/hosts` file that points the Panel's domain to the correct IP.
 other. Promiscuous mode might be needed.
 
 ## Invalid MAC Exception
-:::warning
+:::caution
 This error should never happen if you correctly follow our installation and upgrade guides. The only time we have
 ever seen this error occur is when you blindly restore the Panel database from a backup and try to use a fresh
 installation of the Panel.

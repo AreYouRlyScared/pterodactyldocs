@@ -19,7 +19,7 @@ of basic linux system administration you should stop and turn around now.**
 ## Picking a Server OS
 Pterodactyl runs on a wide range of operating systems, so pick whichever you are most comfortable using.
 
-:::warning
+:::caution
 Pterodactyl does not support most OpenVZ systems due to incompatabilities with Docker. If you are planning on running
 this software on an OpenVZ based system you will &mdash; most likely &mdash; not be successful.
 :::
@@ -182,7 +182,7 @@ then paste the line below.
 Next you need to create a new systemd worker to keep our queue process running in the background. This queue is responsible
 for sending emails and handling many other background tasks for Pterodactyl.
 
-:::warning
+:::caution
 If you are using Ubuntu 14.04 you cannot use this method to run your queue worker. Please see these instructions for
 installing Supervisor and setting up your queue. Ensure you use the same ExecStart line as below.
 :::

@@ -2,7 +2,7 @@
 
 [[toc]]
 
-:::warning
+:::caution
 This tutorial uses examples from our [`core:java`](https://github.com/pterodactyl/images/tree/java) docker image,
 which can be found on Github. This tutorial also assumes some knowledge of [Docker](https://docker.io/), we suggest
 reading up if this all looks foreign to you.

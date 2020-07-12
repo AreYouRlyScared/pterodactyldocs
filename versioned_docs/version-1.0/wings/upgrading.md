@@ -6,7 +6,7 @@ sidebar_label: Upgrade
 Upgrading Wings is a painless process and should take less than a minute to complete.
 
 ## Move Old Settings
-:::warning
+:::caution
 As of `wings@1.0.0-beta.5` we have moved the default location for the configuration
 to be in `/etc/pterodactyl`. Please take note of this when performing the upgrade!
 :::
@@ -37,7 +37,7 @@ curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/do
 chmod u+x /usr/local/bin/wings
 ```
 
-:::warning
+:::caution
 Previously this guide recommended to place the `wings` binary in `/etc/pterodactyl`, which is against best practices.
 You should delete `/etc/pterodactyl/wings` after downloading the latest binary to `/usr/local/bin`.
 :::

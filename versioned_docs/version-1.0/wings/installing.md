@@ -13,7 +13,7 @@ to change, important features are missing, and the team has not vetted the perfo
 security of the software.
 :::
 
-:::warning
+:::caution
 You should only install Wings if you are running **Pterodactyl 1.0**. Do not install this software
 for previous versions of Pterodactyl. If you have no idea what this means, you probably do not need
 to be installing this software.
@@ -72,7 +72,7 @@ are listed below for commonly supported systems.
 * [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
 * [Debian](https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce)
 
-:::warning Check your Kernel
+:::caution Check your Kernel
 Please be aware that some hosts install a modified kernel that does not support important docker features. Please
 check your kernel by running `uname -r`. If your kernel ends in `-xxxx-grs-ipv6-64` or `-xxxx-mod-std-ipv6-64` you're
 probably using a non-supported kernel. Check our [Kernel Modifications](kernel_modifications.md) guide for details.
@@ -111,7 +111,7 @@ curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/do
 chmod u+x /usr/local/bin/wings
 ```
 
-:::warning OVH/SYS Servers
+:::caution OVH/SYS Servers
 If you are using a server provided by OVH or SoYouStart please be aware that your main drive space is probably allocated to
 `/home`, and not `/` by default. Please consider using `/home/daemon-data` for server data. This can be easily
 set when creating the node.

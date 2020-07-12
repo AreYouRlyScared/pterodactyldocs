@@ -88,6 +88,6 @@ specific keys. To do so, follow the instructions below.
 4. Include the domain that your panel is located on.
 5. On the next page displayed, locate the "Site Key" and "Secret Key". In Pterodactyl's control panel click on "Settings" and then the "Advanced" tab. Enter the keys in the boxes "Site Key" and "Secret Key", respectively.
 
-:::warning Disabling Domain Verification
+:::caution Disabling Domain Verification
 If you do not want reCAPTCHA to verify the domain making the validation request you can uncheck "Verify the origin of reCaptcha solution" under "Advanced Settings" after generating your key.
 :::

@@ -6,7 +6,7 @@
 
 If you want to operate Minecraft proxy servers like BungeeCord, Waterfall, HexaCord, etc. securely, you can do so with pterodactyl alone as long as you stay on the same node. It differs from a traditional setup in a few ways and might require additonal firewall rules, which is what this guide is for.
 
-:::warning
+:::caution
 For the setup described below, it is necessary that all servers are on the same node.
 :::
 
@@ -56,7 +56,7 @@ If you are using a firewall, additional rules might be required to allow servers
 
 You can use the following commands as an example. `172.18.0.1` is the default address referring to the node within the pterodactyl network. Replace `<LOCALHOST_PORT>` with the allocated localhost ports of the game servers.
 
-:::warning
+:::caution
 The following commands will allow any server on the node to access the opened ports.
 :::
 
@@ -73,7 +73,7 @@ ufw allow in on pterodactyl0 to 172.18.0.1 port <LOCALHOST_PORT> proto tcp
 
 Allow access to pterodactyl0 from the pterodactyl0 network.
 
-:::warning
+:::caution
 This command will allow any server to access all other servers as well as all ports on the node.
 :::
 

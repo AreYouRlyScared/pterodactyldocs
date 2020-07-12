@@ -63,7 +63,7 @@ are listed below for commonly supported systems.
 * [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
 * [Debian](https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce)
 
-:::warning Check your Kernel
+:::caution Check your Kernel
 Please be aware that some hosts install a modified kernel that does not support important docker features. Please
 check your kernel by running `uname -r`. If your kernel ends in `-xxxx-grs-ipv6-64` or `-xxxx-mod-std-ipv6-64` you're
 probably using a non-supported kernel. Check our [Kernel Modifications](kernel_modifications.md) guide for details.
@@ -114,7 +114,7 @@ mkdir -p /srv/daemon /srv/daemon-data
 cd /srv/daemon
 ```
 
-:::warning OVH/SYS Servers
+:::caution OVH/SYS Servers
 If you are using a server provided by OVH or SoYouStart please be aware that your main drive space is probably allocated to
 `/home`, and not `/` by default. Please consider using `/home/daemon-data` for server data. This can be easily
 set when creating the node.
@@ -128,7 +128,7 @@ curl -L https://github.com/pterodactyl/daemon/releases/download/v0.6.13/daemon.t
 Finally, we need to install the dependencies that allow the Daemon to run properly. This command will most likely
 take a few minutes to run, please do not interrupt it.
 
-:::warning Audit Results
+:::caution Audit Results
 You may see output along the lines of "found 14 vulnerabilities (6 low, 3 moderate, 5 high) in 927 scanned packages".
 You can safely ignore this output. Do not run the audit fix command, you _will_ break your Daemon.
 :::
@@ -144,7 +144,7 @@ Once you have done that there will be a tab called Configuration when you view t
 Simply copy and paste the code block and paste it into a file called `core.json` in `/srv/daemon/config` and save it.
 You may also use the Auto-Deployment feature rather than manually creating the files.
 
-![](./../../.vuepress/public/daemon_configuration_example.png)
+![](/img/daemon_configuration_example.png)
 
 ## Starting the Daemon
 To start your daemon simply move into the daemon directory and run the command below which will start the daemon in
@@ -156,7 +156,7 @@ sudo npm start
 ```
 
 ### Daemonizing (using systemd)
-:::warning
+:::caution
 If you are using Ubuntu 14 you cannot use `systemd` to manage your Daemon. Please see the instructions below on using
 "forever" to run the daemon.
 :::
