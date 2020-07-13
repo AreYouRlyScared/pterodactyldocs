@@ -3,12 +3,15 @@ id: webserver_configuration
 title: Webserver Configuration
 sidebar_label: Webserver Configuration
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 :::danger
 You should remove the default Apache or NGINX configuration as it will expose application secrets to malicious
 users by default.
 :::
 
-## NGINX
+# NGINX
 You should paste the contents of the file below, replacing `<domain>` with your domain name being used in a file called
 `pterodactyl.conf` and place it in `/etc/nginx/sites-available/`, or &mdash; if on CentOS, `/etc/nginx/conf.d/`.
 
@@ -21,13 +24,18 @@ Let's Encrypt.
 When using the SSL configuration you MUST create SSL certificates, otherwise your NGINX will fail to start.  See [Creating SSL Certificates](/tutorials/creating_ssl_certificates.html) documentation page for how to create these certificates before continuing.
 :::
 
-<<< @/.snippets/webservers/nginx-php7.4.conf{5,11,26-27}
-
-Continue reading to the bottom of this section for the final steps with NGINX!
-
-### NGINX Without SSL
-
-<<< @/.snippets/webservers/nginx-php7.4-nossl.conf{3}
+<Tabs
+  defaultValue="nginx"
+  values={[
+    {label: 'Nginx With SSL', value: 'nginx'},
+    {label: 'Nginx Without SSL', value: 'nginxnonssl'}
+  ]}>
+<TabItem value="nginx">
+```js
+foo();
+```</TabItem>
+<TabItem value="nginxnonssl">Webserver config here</TabItem>
+</Tabs>
 
 ### Enabling Configuration
 The final step is to enable your NGINX configuration and restart it.
@@ -39,24 +47,22 @@ sudo ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/
 systemctl restart nginx
 ```
 
-## Apache
+# Apache
 You should paste the contents of the file below, replacing `<domain>` with your domain name being used in a file called
 `pterodactyl.conf` and place it in `/etc/apache2/sites-available`, or &mdash; if on CentOS, `/etc/httpd/conf.d/`.
 
 Note: When using Apache, make sure you have the `libapache2-mod-php` package installed or else PHP will not display on your webserver.
 
-### Apache With SSL
-Like the nginx configuration, this assumes you will be using SSL on both the Panel and Daemons for improved security.
+<Tabs
+  defaultValue="apache"
+  values={[
+    {label: 'Apache With SSL', value: 'apache'},
+    {label: 'Apache Without SSL', value: 'apachenonssl'}
+  ]}>
+<TabItem value="apache">Webserver config here</TabItem>
+<TabItem value="apachenonssl">Webserver config here</TabItem>
 
-:::caution
-When using the SSL configuration you MUST create SSL certificates, otherwise your Apache will fail to start.  See [Creating SSL Certificates](/tutorials/creating_ssl_certificates.html) documentation page for how to create these certificates before continuing.
-:::
-
-<<< @/.snippets/webservers/apache.conf{2,8,17-18}
-
-### Apache Without SSL
-
-<<< @/.snippets/webservers/apache-nossl.conf{2}
+</Tabs>
 
 ### Enabling Configuration
 Once you've created the file above, simply run the commands below. If you are on CentOS _you do not need to run the commands

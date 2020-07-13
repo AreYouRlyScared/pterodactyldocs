@@ -7,12 +7,14 @@ function Hello() {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'left',
-          alignItems: 'left',
+          justifyContent: 'center',
+          alignItems: 'center',
           height: '50vh',
           fontSize: '20px',
         }}>
-        <h1># Community Guides and Tutorials</h1>
+        <p>
+          Edit <code>pages/hello.js</code> and save to reload.
+        </p>
       </div>
     </Layout>
   );

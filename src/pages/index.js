@@ -5,12 +5,45 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
-import { GoLock } from "react-icons/go"
+import { GoBeaker, GoServer, GoDeviceDesktop } from "react-icons/go";
+import { FaLock, FaWallet, FaDocker } from "react-icons/fa";
+import ImageGallery from 'react-image-gallery';
+
+const images = [
+  {
+    original: '/img/screenshot-1.png',
+  },
+  {
+    original: '/img/screenshot-2.png',
+  },
+  {
+    original: '/img/screenshot-3.png',
+  },
+  {
+    original: '/img/screenshot-4.png',
+  },
+  {
+    original: '/img/screenshot-5.png',
+  },
+  {
+    original: '/img/screenshot-6.png',
+  },
+  {
+    original: '/img/screenshot-7.png',
+  },
+  {
+    original: '/img/screenshot-8.png',
+  },
+  {
+    original: '/img/screenshot-9.png',
+  },
+
+];
 
 const features = [
   {
     title: <>Security First</>,
-    icon: '',
+    icon: 'FaLock',
     description: (
       <>
         Security is a first-class citizen on this platform with bcrypt hashing, AES-256-CBC encryption, and HTTPS support out of the box.
@@ -28,7 +61,7 @@ const features = [
   },
   {
     title: <>Docker to the Core</>,
-    icon: 'anchor',
+    icon: 'FaDocker',
     description: (
       <>
         All servers run in isolated Docker containers that limit attack vectors, provide strict resource limits, and provide environments tailored to each specific game.
@@ -37,7 +70,7 @@ const features = [
   },
   {
     title: <>Free & Open Source</>,
-    icon: 'wallet',
+    icon: 'FaWallet',
     description: (
       <>
         Pterodactyl is 100% free and licensed under a MIT license. 
@@ -71,7 +104,7 @@ function Feature({icon, title, description}) {
     <div className={clsx('col col--4', styles.feature)}>
       {icon && (
         <div className="text--center">
-          {icon}
+          {icon == "GoServer" ? <GoServer size="4rem" /> : icon == "GoDeviceDesktop" ? <GoDeviceDesktop size="4rem" /> : icon == "GoBeaker" ? <GoBeaker size="4rem"/> : icon == "FaLock" ? <FaLock size="4rem" /> : icon == "FaWallet" ? <FaWallet size="4rem" /> : icon == "FaDocker" ? <FaDocker size="4rem" /> : ""}
         </div>
       )}
       <h2>{title}</h2>
@@ -89,7 +122,7 @@ function Home() {
       description="Description will go into a meta tag in <head />">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <img src="https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png" alt="Pterodactyl" class="logo" />
+          <img src="https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png" alt="Pterodactyl" className="logo" />
           <div className={styles.buttons}>
           <Link
               className={clsx(
@@ -114,7 +147,8 @@ function Home() {
         {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
-              <div className="row">
+              <h1 className="text--center">Why Pterodactyl?</h1>
+              <div className="row text--center">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
                 ))}
@@ -122,6 +156,11 @@ function Home() {
             </div>
           </section>
         )}
+        <section className={clsx('hero hero--secondary', styles.heroBanner)}>
+          <div className="container">
+            <ImageGallery items={images} showNav="false" showFullscreenButton="false" />
+          </div>
+        </section>
       </main>
     </Layout>
   );
