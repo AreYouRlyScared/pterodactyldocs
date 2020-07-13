@@ -37,8 +37,16 @@ module.exports = {
           position: 'right',
         },
       ],
-    }
-  },
+    },
+    announcementBar:
+    {
+      id: 'welcome',
+      content:
+        'These are still a WIP.... @AreYouScared',
+      backgroundColor: '#e12d39', 
+      textColor: '#fff',
+    },
+},
   presets: [
     [
       '@docusaurus/preset-classic',
