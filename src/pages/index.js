@@ -10,34 +10,15 @@ import { FaLock, FaWallet, FaDocker } from "react-icons/fa";
 import ImageGallery from 'react-image-gallery';
 
 const images = [
-  {
-    original: '/img/screenshot-1.png',
-  },
-  {
-    original: '/img/screenshot-2.png',
-  },
-  {
-    original: '/img/screenshot-3.png',
-  },
-  {
-    original: '/img/screenshot-4.png',
-  },
-  {
-    original: '/img/screenshot-5.png',
-  },
-  {
-    original: '/img/screenshot-6.png',
-  },
-  {
-    original: '/img/screenshot-7.png',
-  },
-  {
-    original: '/img/screenshot-8.png',
-  },
-  {
-    original: '/img/screenshot-9.png',
-  },
-
+  {original: '/img/screenshot-1.png',thumbnail: '/img/screenshot-1.png'},
+  {original: '/img/screenshot-2.png',thumbnail: '/img/screenshot-2.png'},
+  {original: '/img/screenshot-3.png',thumbnail: '/img/screenshot-3.png'},
+  {original: '/img/screenshot-4.png',thumbnail: '/img/screenshot-4.png'},
+  {original: '/img/screenshot-5.png',thumbnail: '/img/screenshot-5.png'},
+  {original: '/img/screenshot-6.png',thumbnail: '/img/screenshot-6.png'},
+  {original: '/img/screenshot-7.png',thumbnail: '/img/screenshot-7.png'},
+  {original: '/img/screenshot-8.png',thumbnail: '/img/screenshot-8.png'},
+  {original: '/img/screenshot-9.png',thumbnail: '/img/screenshot-9.png'},
 ];
 
 const features = [
@@ -158,7 +139,7 @@ function Home() {
         )}
         <section className={clsx('hero hero--secondary', styles.heroBanner)}>
           <div className="container">
-            <ImageGallery items={images} showNav="false" showFullscreenButton="false" />
+            <ImageGallery items={images}/>
           </div>
         </section>
       </main>
