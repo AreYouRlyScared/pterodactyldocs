@@ -26,7 +26,7 @@
     {
       "collapsed": false,
       "type": "category",
-      "label": "Panel",
+      "label": "Panel v1.0",
       "items": [
         {
           "type": "doc",
@@ -37,37 +37,40 @@
           "id": "version-1.0/panel/webserver_configuration"
         },
         {
-          "collapsed": true,
-          "type": "category",
-          "label": "Upgrading",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-1.0/panel/upgrade/upgrade_panel"
-            }
-          ]
+          "type": "doc",
+          "id": "version-1.0/panel/upgrade/upgrade_panel"
         }
       ]
     },
     {
       "collapsed": false,
       "type": "category",
-      "label": "Daemon",
+      "label": "Wings",
       "items": [
         {
           "type": "doc",
           "id": "version-1.0/wings/install_wings"
         },
         {
-          "collapsed": true,
-          "type": "category",
-          "label": "Upgrading",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-1.0/wings/upgrade_wings"
-            }
-          ]
+          "type": "doc",
+          "id": "version-1.0/wings/upgrade_wings"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "v0.7 Install Guides",
+      "items": [
+        {
+          "type": "link",
+          "label": "Panel v0.7",
+          "href": "/docs/0.7/panel/getting_started"
+        },
+        {
+          "type": "link",
+          "label":"Daemon v0.7",
+          "href":"/docs/0.7/daemon/installing"
         }
       ]
     }

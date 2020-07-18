@@ -114,73 +114,17 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "Community Guides",
+      "label": "v1.0 Install Guides",
       "items": [
         {
-          "type": "doc",
-          "id": "version-0.7/community/cg_about"
+          "type": "link",
+          "label": "Panel v1.0",
+          "href": "/docs/panel/getting_started"
         },
         {
-          "collapsed": true,
-          "type": "category",
-          "label": "Panel",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/panel/cg_pl_centos7"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/panel/cg_pl_centos8"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/panel/cg_pl_debian9"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/panel/cg_pl_debian10"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/panel/cg_pl_ubuntu1804"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/panel/cg_pl_ubuntu2004"
-            }
-          ]
-        },
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Daemon",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/daemon/cg_da_centos7"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/daemon/cg_da_centos8"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/daemon/cg_da_debian9"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/daemon/cg_da_debian10"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/daemon/cg_da_ubuntu1804"
-            },
-            {
-              "type": "doc",
-              "id": "version-0.7/community/installation-guides/daemon/cg_da_ubuntu2004"
-            }
-          ]
+          "type": "link",
+          "label":"Wings v1.0",
+          "href":"/docs/wings/install_wings"
         }
       ]
     }

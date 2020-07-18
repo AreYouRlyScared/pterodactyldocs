@@ -12,17 +12,18 @@ This guide is based off the [official installation documentation](/panel/getting
 ## Install Requirements and Additional Utilities
 We will install all of Pterodactyl's [required](/panel/getting_started.md#dependencies) dependencies and a few aditional utilities.
 
-
 :::tip
 If you run `sestatus` and it shows `SELinux status: enabled` you should install the following packages for later
 :::
 
 ### SELinux tools
+
 ```bash
 yum install -y policycoreutils policycoreutils-python selinux-policy selinux-policy-targeted libselinux-utils setroubleshoot-server setools setools-console mcstrans
 ```
 
 ### MariaDB
+
 ```bash
 ## Install Repos
 cat <<EOF > /etc/yum.repos.d/mariadb.repo
@@ -47,6 +48,7 @@ systemctl enable mariadb
 ```
 
 ### PHP 7.3
+
 We recommend the remi repo to get the latest php packages.
 
 ```bash
@@ -64,6 +66,7 @@ yum install -y php php-common php-fpm php-cli php-json php-mysqlnd php-mcrypt ph
 ```
 
 ### Composer
+
 ```bash
 yum install -y zip unzip # Required for Composer
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -71,8 +74,8 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 
 ## Install Utility Packages
 
-
 ### Nginx
+
 ```bash
 yum install -y nginx
 
@@ -82,6 +85,7 @@ firewall-cmd --reload
 ```
 
 ### Redis
+
 ```bash
 yum install -y --enablerepo=remi redis
 

@@ -16,13 +16,13 @@ module.exports = {
       links: [
         {
           to: 'docs/panel/getting_started',
-          activeBasePath: 'docs/panel',
+          activeBasePath: '/docs/panel',
           label: 'Documentation',
           position: 'right',
         },
         {
-          to: 'docs/community/about',
-          activeBasePath: 'docs/community',
+          to: 'docs/community/cg_about',
+          activeBasePath: '/docs/community/',
           label: 'Community Guides',
           position: 'right',
         },
@@ -55,7 +55,6 @@ module.exports = {
           // It is recommended to set document id as docs home page (`docs/` path).
           homePageId: 'project/introduction',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
         },

@@ -1,5 +1,5 @@
 module.exports = {
-  someSidebar: {
+  mainSideBar: {
     "Project Information": ["project/introduction", "project/about", "project/terminology", "project/community_standards"],
     Panel: [
       {
@@ -62,4 +62,102 @@ module.exports = {
       },
     ],
   },
+  communitySidebar: [
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Project Information",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0/project/introduction"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/project/about"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/project/terminology"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0/project/community_standards"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Community Guides for v1.0",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0/community/cg_about"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Panel",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/panel/cg_pl_centos7"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/panel/cg_pl_centos8"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/panel/cg_pl_debian9"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/panel/cg_pl_debian10"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/panel/cg_pl_ubuntu1804"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/panel/cg_pl_ubuntu2004"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Daemon",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/daemon/cg_da_centos7"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/daemon/cg_da_centos8"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/daemon/cg_da_debian9"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/daemon/cg_da_debian10"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/daemon/cg_da_ubuntu1804"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.0/community/installation-guides/daemon/cg_da_ubuntu2004"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 };
