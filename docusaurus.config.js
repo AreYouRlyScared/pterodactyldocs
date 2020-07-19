@@ -46,7 +46,42 @@ module.exports = {
       backgroundColor: '#e12d39', 
       textColor: '#fff',
     },
-},
+    footer: {
+      style: 'dark',
+      logo: {
+        src: '/img/pterodactyl-flat.png',
+      },
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'v0.7 ( Current Stable )',
+              to: 'docs/0.7/panel/getting_started',
+            },
+            {
+              label: 'v1.0 ( Beta )',
+              to: 'docs/0.7/panel/getting_started',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Github',
+              href: 'https://github.com/pterodactyl',
+            },
+            {
+              label: 'Discord',
+              href: 'https://pterodactyl.io/discord',
+            },
+          ],
+        },
+      ],
+      copyright: `MIT Licensed | Copyright © 2015 - ${new Date().getFullYear()} Dane Everitt & Contributors.`,
+    },
+  },
   presets: [
     [
       '@docusaurus/preset-classic',
