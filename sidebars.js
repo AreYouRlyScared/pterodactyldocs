@@ -1,68 +1,5 @@
 module.exports = {
-  mainSideBar: {
-    "Project Information": ["project/introduction", "project/about", "project/terminology", "project/community_standards"],
-    Panel: [
-      {
-        collapsed: true,
-        type: "category",
-        label: "Panel 0.7 ( Current )",
-        items: [
-          {
-            type: "doc",
-            id: "version-0.7/panel/getting_started",
-          },
-          {
-            type: "doc",
-            id: "version-0.7/panel/webserver_configuration",
-          },
-        ],
-      },
-      {
-        collapsed: true,
-        type: "category",
-        label: "Panel 1.0 ( Beta )",
-        items: [
-          {
-            type: "doc",
-            id: "version-1.0/panel/getting_started",
-          },
-          {
-            type: "doc",
-            id: "version-1.0/panel/webserver_configuration",
-          },
-        ],
-      },
-    ],
-    Daemon: [
-      {
-        collapsed: true,
-        type: "category",
-        label: "Daemon 0.6 ( Current )",
-        items: [
-          {
-            type: "doc",
-            id: "version-0.7/daemon/installing",
-          },
-        ],
-      },
-      {
-        collapsed: true,
-        type: "category",
-        label: "Wings 1.0 ( Beta )",
-        items: [
-          {
-            type: "doc",
-            id: "version-1.0/wings/install_wings",
-          },
-          {
-            type: "doc",
-            id: "version-1.0/wings/upgrade_wings",
-          },
-        ],
-      },
-    ],
-  },
-  communitySidebar: [
+  v7SideBar: [
     {
       "collapsed": false,
       "type": "category",
@@ -70,94 +7,204 @@ module.exports = {
       "items": [
         {
           "type": "doc",
-          "id": "version-1.0/project/introduction"
+          "id": "project/introduction"
         },
         {
           "type": "doc",
-          "id": "version-1.0/project/about"
+          "id": "project/about"
         },
         {
           "type": "doc",
-          "id": "version-1.0/project/terminology"
+          "id": "project/terminology"
         },
         {
           "type": "doc",
-          "id": "version-1.0/project/community_standards"
+          "id": "project/community_standards"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Panel",
+      "items": [
+        {
+          "type": "doc",
+          "id": "0.7/panel/getting_started"
+        },
+        {
+          "type": "doc",
+          "id": "0.7/panel/webserver_configuration"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Upgrading",
+          "items": [
+            {
+              "type": "doc",
+              "id": "0.7/panel/upgrade/0.6_0.7"
+            },
+            {
+              "type": "doc",
+              "id": "0.7/panel/upgrade/0.7.x"
+            },
+            {
+              "type": "doc",
+              "id": "0.7/panel/upgrade/0.7_1.0"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "0.7/panel/environment_configuration"
+        },
+        {
+          "type": "doc",
+          "id": "0.7/panel/troubleshooting"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Daemon",
+      "items": [
+        {
+          "type": "doc",
+          "id": "0.7/daemon/installing"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Upgrading",
+          "items": [
+            {
+              "type": "doc",
+              "id": "0.7/daemon/upgrade/0.4_0.5"
+            },
+            {
+              "type": "doc",
+              "id": "0.7/daemon/upgrade/0.5.x"
+            },
+            {
+              "type": "doc",
+              "id": "0.7/daemon/upgrade/0.5_0.6"
+            },
+            {
+              "type": "doc",
+              "id": "0.7/daemon/upgrade/0.6.x"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "0.7/daemon/additional_configuration"
+        },
+        {
+          "type": "doc",
+          "id": "0.7/daemon/debian_8_docker"
+        },
+        {
+          "type": "doc",
+          "id": "0.7/daemon/standalone_sftp"
         }
       ]
     },
     {
       "collapsed": true,
       "type": "category",
-      "label": "Community Guides for v1.0",
+      "label": "Beta v1.0 Install Guides",
       "items": [
         {
-          "type": "doc",
-          "id": "version-1.0/community/cg_about"
+          "type": "link",
+          "label": "Panel v1.0",
+          "href": "/docs/1.0/panel/getting_started"
         },
         {
-          "collapsed": true,
-          "type": "category",
-          "label": "Panel",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/panel/cg_pl_centos7"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/panel/cg_pl_centos8"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/panel/cg_pl_debian9"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/panel/cg_pl_debian10"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/panel/cg_pl_ubuntu1804"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/panel/cg_pl_ubuntu2004"
-            }
-          ]
-        },
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Daemon",
-          "items": [
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/daemon/cg_da_centos7"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/daemon/cg_da_centos8"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/daemon/cg_da_debian9"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/daemon/cg_da_debian10"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/daemon/cg_da_ubuntu1804"
-            },
-            {
-              "type": "doc",
-              "id": "version-1.0/community/installation-guides/daemon/cg_da_ubuntu2004"
-            }
-          ]
+          "type": "link",
+          "label":"Wings v1.0",
+          "href":"/docs/1.0/wings/install_wings"
         }
       ]
     }
+  ],
+  v1Sidebar : [
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Panel",
+      "items": [
+        {
+          "type": "doc",
+          "id": "1.0/panel/getting_started"
+        },
+        {
+          "type": "doc",
+          "id": "1.0/panel/webserver_configuration"
+        },
+        {
+          "type": "doc",
+          "id": "1.0/panel/upgrade/upgrade_panel"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Wings",
+      "items": [
+        {
+          "type": "doc",
+          "id": "1.0/wings/install_wings"
+        },
+        {
+          "type": "doc",
+          "id": "1.0/wings/upgrade_wings"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "v0.7 Install Guides",
+      "items": [
+        {
+          "type": "link",
+          "label": "Panel v0.7",
+          "href": "/docs/0.7/panel/getting_started"
+        },
+        {
+          "type": "link",
+          "label":"Daemon v0.7",
+          "href":"/docs/0.7/daemon/installing"
+        }
+      ]
+    }
+  ],
+  communitySidebar : [
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Project Information",
+      "items": [
+        {
+          "type": "doc",
+          "id": "project/introduction"
+        },
+        {
+          "type": "doc",
+          "id": "project/about"
+        },
+        {
+          "type": "doc",
+          "id": "project/terminology"
+        },
+        {
+          "type": "doc",
+          "id": "project/community_standards"
+        }
+      ]
+    },
   ]
-};
+}

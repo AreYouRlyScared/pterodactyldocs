@@ -15,14 +15,14 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/panel/getting_started',
-          activeBasePath: '/docs/panel',
+          to: 'docs/0.7/panel/getting_started',
+          //activeBasePath: '/docs/0.7',
           label: 'Documentation',
           position: 'right',
         },
         {
           to: 'docs/community/cg_about',
-          activeBasePath: '/docs/community/',
+          activeBasePath: '/community/',
           label: 'Community Guides',
           position: 'right',
         },
@@ -61,7 +61,7 @@ module.exports = {
             },
             {
               label: 'v1.0 ( Beta )',
-              to: 'docs/0.7/panel/getting_started',
+              to: 'docs/1.0/panel/getting_started',
             },
           ],
         },
