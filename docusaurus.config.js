@@ -16,7 +16,6 @@ module.exports = {
       links: [
         {
           to: 'docs/0.7/panel/getting_started',
-          //activeBasePath: '/docs/0.7',
           label: 'Documentation',
           position: 'right',
         },
@@ -25,6 +24,12 @@ module.exports = {
           activeBasePath: '/community/',
           label: 'Community Guides',
           position: 'right',
+        },
+        {
+          to: '/test',
+          activeBasePath: '/test',
+          label: "Change Log",
+          position: "right"
         },
         {
           to: 'https://pterodactyl.io/discord',

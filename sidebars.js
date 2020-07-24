@@ -133,6 +133,33 @@ module.exports = {
     {
       "collapsed": false,
       "type": "category",
+      "label": "Project Information",
+      "items": [
+        {
+          "type": "link",
+          "label":"Introduction",
+          "href": "/docs/"
+        },
+        {
+          "type": "link",
+          "label": "About",
+          "href": "/docs/project/about"
+        },
+        {
+          "type": "link",
+          "label":"Terminology",
+          "href": "/docs/project/terminology"
+        },
+        {
+          "type": "link",
+          "label":"Community Standards",
+          "href": "/docs/project/community_standards"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "type": "category",
       "label": "Panel",
       "items": [
         {
@@ -189,20 +216,24 @@ module.exports = {
       "label": "Project Information",
       "items": [
         {
-          "type": "doc",
-          "id": "project/introduction"
+          "type": "link",
+          "label":"Introduction",
+          "href": "/docs/"
         },
         {
-          "type": "doc",
-          "id": "project/about"
+          "type": "link",
+          "label": "About",
+          "href": "/docs/project/about"
         },
         {
-          "type": "doc",
-          "id": "project/terminology"
+          "type": "link",
+          "label":"Terminology",
+          "href": "/docs/project/terminology"
         },
         {
-          "type": "doc",
-          "id": "project/community_standards"
+          "type": "link",
+          "label":"Community Standards",
+          "href": "/docs/project/community_standards"
         }
       ]
     },
