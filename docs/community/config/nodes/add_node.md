@@ -6,11 +6,11 @@
 Head to the admin panel and click the Nodes tab on the left sidebar. After that, click 'Create New' on the
 top right side to open the page to add a node.
 
-![](../../../.vuepress/public/community/config/nodes/pterodactyl_add_node_create_button.png)
+pterodactyl_add_node_create_button.png
 
 ## Information Required
 
-![](../../../.vuepress/public/community/config/nodes/pterodactyl_add_node_new_page.png)
+pterodactyl_add_node_new_page.png
 
 * **Name**: a quick identifiable name for the daemon
 * **Description**: a long description that is used to help you identify the node.
@@ -50,7 +50,7 @@ for more information, or try one of the community guides for [CentOS](/community
 ## Configuring the Node
 Go to the Node Configuration page
 
-![](../../../.vuepress/public/community/config/nodes/pterodactyl_add_node_config.png)
+pterodactyl_add_node_config.png
 
 Copy and paste the config into the `core.json` folder. (Default location is `/srv/daemon/config/core.json`)
 

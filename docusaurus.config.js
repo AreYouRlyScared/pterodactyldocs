@@ -6,6 +6,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'pterodactyl',
   projectName: 'pterodactyl',
+  onBrokenLinks: 'log',
   themeConfig: {
     navbar: {
       title: 'Pterodactyl',
@@ -13,7 +14,7 @@ module.exports = {
         alt: 'Pterodactyl',
         src: 'img/pterodactyl.png',
       },
-      links: [
+      items: [
         {
           to: 'docs/panel/getting_started',
           activeBasePath: '/docs/panel',

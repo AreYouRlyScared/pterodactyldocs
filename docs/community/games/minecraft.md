@@ -22,7 +22,7 @@ The actual game servers behind the proxy should use allocations with `127.0.0.1`
 
 #### Example
 
-![](../../.vuepress/public/community/games/minecraft/proxy/node-allocations.png)
+node-allocations.png
 
 `10.1.70.62` is an example, replace it with your own public IP address.
 
@@ -34,7 +34,7 @@ As the proxy server, like all servers, is running in a docker container with net
 
 This will be different for other proxy servers, please refer to their documentation.
 
-![](../../.vuepress/public/community/games/minecraft/proxy/bungee-config.png)
+bungee-config.png
 
 ### paper/spigot/bukkit settings
 
@@ -43,12 +43,12 @@ The servers itself require the regular config options required by server proxies
 #### server.properties
 
 set online-mode `false`
-![](../../.vuepress/public/community/games/minecraft/proxy/paper-server.properties.png)
+paper-server.properties.png
 
 #### spigot.yml
 
 set bungeecord to `true`
-![](../../.vuepress/public/community/games/minecraft/proxy/paper-spigot.yml.png)
+/paper-spigot.yml.png
 
 ### Firewalls
 
