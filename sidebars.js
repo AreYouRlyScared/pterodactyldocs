@@ -103,11 +103,30 @@ module.exports = {
         },
         {
           "type": "doc",
+          "id": "0.7/daemon/kernel_modifications"
+        },
+        {
+          "type": "doc",
           "id": "0.7/daemon/debian_8_docker"
         },
         {
           "type": "doc",
           "id": "0.7/daemon/standalone_sftp"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Tutorials",
+      "items": [
+        {
+          "type": "doc",
+          "id": "tutorials/mysql_setup"
+        },
+        {
+          "type": "doc",
+          "id": "tutorials/creating_ssl_certificates"
         }
       ]
     },
@@ -213,27 +232,118 @@ module.exports = {
     {
       "collapsed": false,
       "type": "category",
-      "label": "Project Information",
+      "label": "Community Guides",
       "items": [
         {
-          "type": "link",
-          "label":"Introduction",
-          "href": "/docs/"
+          "type": "doc",
+          "id": "community/cg_about"
         },
         {
-          "type": "link",
-          "label": "About",
-          "href": "/docs/project/about"
+          "collapsed": false,
+          "type": "category",
+          "label": "Panel Installation",
+          "items": [
+            {
+              "type": "doc",
+              "id": "community/installation-guides/panel/centos7"
+            },
+            {
+              "type": "doc",
+              "id": "community/installation-guides/panel/centos8"
+            },
+            {
+              "type": "doc",
+              "id": "community/installation-guides/panel/debian10"
+            },
+            {
+              "type": "doc",
+              "id": "community/installation-guides/panel/debian9"
+            },
+            {
+              "type": "doc",
+              "id": "community/installation-guides/panel/ubuntu1804"
+            },            
+            {
+              "type": "doc",
+              "id": "community/installation-guides/panel/ubuntu2004"
+            }
+          ]
         },
         {
-          "type": "link",
-          "label":"Terminology",
-          "href": "/docs/project/terminology"
+          "collapsed": false,
+          "type": "category",
+          "label": "Daemon Installation",
+          "items": [
+            {
+              "type": "doc",
+              "id": "community/installation-guides/daemon/centos7"
+            },
+            {
+              "type": "doc",
+              "id": "community/installation-guides/daemon/centos8"
+            },
+            {
+              "type": "doc",
+              "id": "community/installation-guides/daemon/debian10"
+            },
+            {
+              "type": "doc",
+              "id": "community/installation-guides/daemon/debian9"
+            },
+            {
+              "type": "doc",
+              "id": "community/installation-guides/daemon/ubuntu1804"
+            },            
+            {
+              "type": "doc",
+              "id": "community/installation-guides/daemon/ubuntu2004"
+            }
+          ]
         },
         {
-          "type": "link",
-          "label":"Community Standards",
-          "href": "/docs/project/community_standards"
+          "collapsed": false,
+          "type": "category",
+          "label": "Creating Eggs",
+          "items":[
+            {
+              "type": "doc",
+              "id": "community/config/eggs/creating_a_custom_egg"
+            },
+            {
+              "type": "doc",
+              "id": "community/config/eggs/creating_a_custom_image"
+            }
+          ]
+        },
+        {
+          "collapsed": false,
+          "type": "category",
+          "label": "Game Configuration",
+          "items":[
+            {
+              "type": "doc",
+              "id": "community/games/minecraft"
+            }
+          ]
+        },
+        {
+          "collapsed": false,
+          "type": "category",
+          "label": "Tutorials",
+          "items": [
+            {
+              "type": "doc",
+              "id": "community/config/nodes/add_node"
+            },
+            {
+              "type": "doc",
+              "id": "community/tutorials/artisan"
+            },
+            {
+              "type": "doc",
+              "id": "community/tutorials/custom_theme_setup"
+            },
+          ]
         }
       ]
     },

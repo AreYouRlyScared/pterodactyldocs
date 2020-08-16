@@ -8,6 +8,7 @@ In most cases, only users with a server provided by OVH will need to make any mo
 :::
 
 ## Update Kernel
+
 Install the new kernels using apt-get. In this case we are installing the latest version of the kernel,
 but feel free to browse using apt-cache search linux-image-extra to find all possible image versions you can
 install. You'll want to install the latest.
@@ -26,6 +27,7 @@ sudo reboot
 ```
 
 ## Confirm Kernel
+
 Once you've rebooted, check that the latest kernel is installed using `uname -r`, it should output `4.4.0-131-generic`
 (in this case) or similar.
 
@@ -34,6 +36,7 @@ If it still includes `-xxxx-grs-ipv6-64` or similar, it didn't work and you shou
 :::
 
 ## Set Default Boot
+
 Ok, so unfortunately the easiest way didn't work, but don't worry, we can still fix this. Firstly, lets run a quick
 command to list potential kernels, just look at the output and make sure you see your newly installed kernel listed.
 
@@ -77,4 +80,5 @@ sudo reboot
 ```
 
 ## Boot from hard disk
+
 It's possible that even after you modified the GRUB configuration the server's still booted into a OVH kernel. If this happens to you, go to the OVH control panel and check the server's booting settings and make sure it's booting from hard disk instead of network boot.

@@ -1,4 +1,8 @@
-# Creating a Custom Egg
+---
+id: creating_a_custom_egg
+title: Creating a Custom Egg
+sidebar_label: Creating a Custom Egg
+---
 :::caution
 You should not edit existing services or options that ship with the Panel. Each upgrade we push can make minor
 changes to these, and you'll lose any changes you've made.
@@ -14,12 +18,12 @@ The default start command is also required, however it can be changed per-option
 ## Create New Option
 After creating the service, in the bottom right of the page you should see a button titled `New Egg`, press it.
 
-![](../../../.vuepress/public/community/config/eggs/Pterodactyl_Create_New_Egg_Select.png)
+![](/img/community/eggs/Pterodactyl_Create_New_Egg_Select.png)
 
 You will be taken to a new service option page which is where most of the configuration happens. The first thing
 you need to do is select your service that you created previously from the `Associated Nest` dropdown.
 
-![](../../../.vuepress/public/community/config/eggs/Pterodactyl_Create_New_Egg_Process_Management.png)
+![](/img/community/eggs/Pterodactyl_Create_New_Egg_Process_Management.png)
 
 After that, enter an Option Name to describe it, in this case I am using `Widget`. You will also need to provide a
 _valid_ docker image, as well as a start command to be assigned to servers under this service option (remember, this
@@ -31,7 +35,7 @@ our [Creating a Docker Image](/community/config/eggs/creating_a_custom_image.md)
 ## Configure Process Management
 This is perhaps the most important step in this service option configuration, as this tells the Daemon how to run everything.
 
-![](../../../.vuepress/public/community/config/eggs/Pterodactyl_Create_New_Egg_Process_Management.png)
+![](/img/community/eggs/Pterodactyl_Create_New_Egg_Process_Management.png)
 
 The first field you'll encounter is `Copy Settings From`. The default selection is `None`. That is expected, and okay.
 This dropdown is discussed at the end of this article.
@@ -108,11 +112,9 @@ In this example, we are parsing `config.yml` using the `yaml` parser. The first 
 ports and IPs for the first listener block. The last one, `servers.*.address` uses wildcard matching to match any items
 within the `servers` block, and then finding each `address` block for those items.
 
-::: v-pre
 An advanced feature of this file configuration is the ability to define multiple find and replace statements for a
 single matching line. In this case, we are looking for either `127.0.0.1` or `localhost` and replacing them with the
-docker interface defined in the configuration file using `{{config.docker.interface}}`. 
-:::
+docker interface defined in the configuration file using `{{config.docker.interface}}`.
 
 ### Start Configuration
 The last block to configure is the `Start Configuration` for servers running using this service option.
@@ -148,7 +150,7 @@ That concludes basic service option configuration.
 As mentioned above, there is a unique `Copy Settings From` dropdown when adding a new option. This gives you the
 ability to, as the name suggests, copy settings defined above from a different option.
 
-![](../../../.vuepress/public/community/config/eggs/Pterodactyl_Create_New_Egg_Copy_Settings_From.png)
+Pterodactyl_Create_New_Egg_Copy_Settings_From.png)
 
 In the panel, we use this to copy settings that remain the same between similar service options, such as many of the
 Minecraft options.
@@ -168,15 +170,13 @@ control to tweak different settings without letting users modify the startup com
 existing ones, visit the new service option you created, and click the `Variables` tab at the top of the page. Lets take
 a look at an example variable that we can create.
 
-![](../../../.vuepress/public/community/config/eggs/Pterodactyl_Create_New_Egg_Variables.png)
+![](/img/community/eggs/Pterodactyl_Create_New_Egg_Variables.png)
 
-::: v-pre
 The name and description are rather self-explanitory, so I'll skip down to the `Environment Variable` box. This should
 be an Alpha-Numeric name with underscores, and should be uppercase. This will be the name of the environment variable
 which can be accessed in the startup command as `{{WOOZLE_WOO}}`, within file modifications as `{{env.WOOZLE_WOO}}`, or
 just `${WOOZLE_WOO}` in any shell scripts (it is passed through in the environment). We also define a default value for
 this environment variable in this example, but it is not required to do so.
-:::
 
 The next section is `Permissions`, which is a dropdown with two options: `Users Can View` and `Users Can Edit`.
 
@@ -198,4 +198,4 @@ regex as any letters or numbers (`\w\d`) including underscore (`_`), periods (`.
 
 They will then be visible when managing the startup for a server in both the Admin CP and on the Front-End.
 
-![](../../../.vuepress/public/community/config/eggs/Pterodactyl_Create_New_Egg_Startup.png)
+![](/img/community/eggs/Pterodactyl_Create_New_Egg_Startup.png)

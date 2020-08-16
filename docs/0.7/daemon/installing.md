@@ -4,16 +4,18 @@ title: Installing
 sidebar_label: Installing
 ---
 ## Supported Systems
+
 | Operating System | Version | Supported | Notes |
 | ---------------- | ------- | :-------: | ----- |
 | **Ubuntu** | 18.04 | :white_check_mark: | Documentation written assuming Ubuntu 18.04 as the base OS. |
-| | [20.04](/community/installation-guides/daemon/ubuntu2004.html) | :white_check_mark: |
-| **CentOS** | [7](/community/installation-guides/daemon/centos7.html) | :warning: | Extra repos are required |
-| | [8](/community/installation-guides/daemon/centos8.html) | :white_check_mark: | |
-| **Debian** | [9](/community/installation-guides/daemon/debian9.html) | :white_check_mark: | |
-| | [10](/community/installation-guides/daemon/debian10.html) | :white_check_mark: | |
+| | [20.04](/docs/community/installation-guides/daemon/ubuntu2004) | :white_check_mark: |
+| **CentOS** | [7](/docs/community/installation-guides/daemon/centos7) | :warning: | Extra repos are required |
+| | [8](/docs/community/installation-guides/daemon/centos8) | :white_check_mark: | |
+| **Debian** | [9](/docs/community/installation-guides/daemon/debian9) | :white_check_mark: | |
+| | [10](/docs/community/installation-guides/daemon/debian10) | :white_check_mark: | |
 
 ## System Requirements
+
 In order to run the Daemon you will need a system capable of running Docker containers. Most VPS and almost all
 dedicated servers should be capable of running Docker, but there are edge cases.
 
@@ -40,6 +42,7 @@ VMware, Inc.
 ```
 
 ## Dependencies
+
 Pterodactyl's Daemon requires the following dependencies be installed on your system in order for it to operate.
 
 * Docker
@@ -51,7 +54,9 @@ Pterodactyl's Daemon requires the following dependencies be installed on your sy
 * `python`
 
 ### Installing Docker
+
 For a quick install of Docker CE, you can execute the command below:
+
 ``` bash
 curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 ```
@@ -70,6 +75,7 @@ probably using a non-supported kernel. Check our [Kernel Modifications](kernel_m
 :::
 
 #### Start Docker on Boot
+
 If you are on an operating system with systemd (Ubuntu 16+, Debian 8+, CentOS 7+) run the command below to have Docker start when you boot your machine.
 
 ``` bash
@@ -77,6 +83,7 @@ systemctl enable docker
 ```
 
 #### Enabling Swap
+
 On most systems, docker will be unable to setup swap space, you can check if this is the case by running `docker info`.
 If it outputs `WARNING: No swap limit support` near the bottom, this is the case. Enabling swap is completely optional,
 but we recommended doing it if you will be hosting for others, and to prevent OOM errors.
@@ -93,6 +100,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="swapaccount=1"
 ```
 
 ### Installing Nodejs
+
 NodeJS is also super easy to install! Simply run the command below to make the package accessible to your system.
 
 ``` bash
@@ -106,6 +114,7 @@ instructions provided by Nodejs](https://nodejs.org/en/download/package-manager/
 :::
 
 ## Installing Daemon Software
+
 The first step for installing the daemon is to make sure we have the required directory structure setup. To do so,
 run the commands below.
 
@@ -121,6 +130,7 @@ set when creating the node.
 :::
 
 The next step is to download the software and unpack the archive.
+
 ``` bash
 curl -L https://github.com/pterodactyl/daemon/releases/download/v0.6.13/daemon.tar.gz | tar --strip-components=1 -xzv
 ```
@@ -138,6 +148,7 @@ npm install --only=production --no-audit --unsafe-perm
 ```
 
 ## Configure Daemon
+
 Once you have installed the daemon and required components, the next step is to create a node on your installed Panel
 Once you have done that there will be a tab called Configuration when you view the node.
 
@@ -147,6 +158,7 @@ You may also use the Auto-Deployment feature rather than manually creating the f
 ![](/img/daemon_configuration_example.png)
 
 ## Starting the Daemon
+
 To start your daemon simply move into the daemon directory and run the command below which will start the daemon in
 foreground mode. Once you are done, use `CTRL+C` to terminate the process. Depending on your server's internet connection
 pulling and starting the Daemon for the first time may take a few minutes.
@@ -156,10 +168,6 @@ sudo npm start
 ```
 
 ### Daemonizing (using systemd)
-:::caution
-If you are using Ubuntu 14 you cannot use `systemd` to manage your Daemon. Please see the instructions below on using
-"forever" to run the daemon.
-:::
 
 Running Pterodactyl Daemon in the background is a simple task, just make sure that it runs without errors before doing
 this. Place the contents below in a file called `wings.service` in the `/etc/systemd/system` directory.

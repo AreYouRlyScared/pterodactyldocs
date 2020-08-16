@@ -23,6 +23,7 @@ would be expanded to the JSON below.
 ```
 
 ## Output Throttles
+
 There are a few throttle limits built into the Daemon to keep people from causing issues with data volume and CPU usage.
 Under normal circumstances users should not encounter these limits. You might see the occasional data throttling
 warning while starting a server or when there is a sudden spike in data output.
@@ -43,6 +44,7 @@ out into a normal JSON object.
 Please note that all of the settings above are in the `internals.throttle.X` path. So, `enabled` is actually `internals.throttle.enabled`.
 
 ## Custom Network Interfaces
+
 If for whatever reason you need to modify the network interfaces used for Pterodactyl's local Docker network you
 can do so by modifying the `core.json` file for the daemon. In most cases you'll just be modifying the network
 name to allow your servers to use the host network stack. To do so, just change `docker.network.name` to be `host`
@@ -82,6 +84,7 @@ The following will stop the daemon, remove the network, and start the daemon aga
 ```
 
 ## Private Registries
+
 | Setting Path | Default Value | Notes |
 | ------------ | ------------- | ----- |
 | `username` | _none_ | The username to use when connecting to the registry. |
@@ -95,6 +98,7 @@ The following will stop the daemon, remove the network, and start the daemon aga
 Please note that all of the settings above are in the `docker.registry.X` path. So, `username` is actually `docker.registry.username`.
 
 ## Security Policies
+
 This daemon ships with a very strict security configuration designed to limit access to the host system, and mitigate
 a large range of potential attack vectors. However, some users might need to tweak these settings, or are running on
 a private instance and are willing to decrease some of the security measures.
@@ -109,6 +113,7 @@ a private instance and are willing to decrease some of the security measures.
 Please note that all of the settings above are in the `docker.policy.network.X` path. So, `ipv6` is actually `docker.policy.network.ipv6`.
 
 ## Container Policy
+
 | Setting Path | Default Value | Notes |
 | ------------ | ------------- | ----- |
 | `tmpfs` | `rw,exec,nosuid,size=50M` | These are the arguments used for mounting a `tmpfs` directory into containers to allow certain programs to run. |
@@ -123,6 +128,7 @@ Please note that all of the settings above are in the `docker.policy.network.X` 
 Please note that all of the settings above are in the `docker.policy.container.X` path. So, `tmpfs` is actually `docker.policy.container.tmpfs`.
 
 ### Default Security Opts Array
+
 ``` json
 [
     'no-new-privileges',

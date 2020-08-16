@@ -1,7 +1,10 @@
-# Creating a Custom Docker Image
-
+---
+id: creating_a_custom_image
+title: Creating a Custom Docker Image
+sidebar_label: Creating a Custom Docker Image
+---
 :::caution
-This tutorial uses examples from our [`core:java`](https://github.com/pterodactyl/images/tree/java) docker image,
+This tutorial uses examples from our [core:java](https://github.com/pterodactyl/images/tree/java) docker image,
 which can be found on Github. This tutorial also assumes some knowledge of [Docker](https://docker.io/), we suggest
 reading up if this all looks foreign to you.
 :::
@@ -55,7 +58,9 @@ Within this `RUN` block, you'll notice the `useradd` command.
 ```bash
 adduser -D -h /home/container container
 ```
-<p class="callout warning">All Pterodactyl containers must have a user named `container`, and the user home **must** be `/home/container`.</p>
+:::warning
+All Pterodactyl containers must have a user named `container`, and the user home **must** be `/home/container`.
+:::
 
 After we create that user, we then define the default container [`USER`](https://docs.docker.com/engine/reference/builder/#user)
 as well as a few [`ENV`](https://docs.docker.com/engine/reference/builder/#env) settings to be applied to things running
@@ -109,10 +114,8 @@ looks something like the example below:
 STARTUP="java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}"
 ```
 
-::: v-pre
 You'll notice some placeholders there, specifically `{{SERVER_MEMORY}}` and `{{SERVER_JARFILE}}`. These both refer to
 other environment variables being passed in, and they look something like the example below.
-:::
 
 ```bash
 SERVER_MEMORY=1024
@@ -126,10 +129,8 @@ configuration. However, that is not necessarily anything to worry about here.
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 ```
 
-::: v-pre
 The command above simply evaluates the `STARTUP` environment variable, and then replaces anything surrounded in
 curly braces `{{EXAMPLE}}` with a matching environment variable (such as `EXAMPLE`). Thus, our `STARTUP` command:
-:::
 
 ```bash
 java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}

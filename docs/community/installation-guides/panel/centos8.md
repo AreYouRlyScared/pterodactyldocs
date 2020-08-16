@@ -1,27 +1,30 @@
 ---
-id: cg_pl_centos8
+id: centos8
 title: CentOS 8
 sidebar_label: CentOS 8
 ---
 In this guide we will install Pterodactyl v0.7.X — including all of it's dependencies — and configure our webserver to serve it using SSL.
 
 :::tip
-This guide is based off the [official installation documentation](/panel/getting_started.md) but is tailored specifically for CentOS 8.
+This guide is based off the [official installation documentation](/docs/0.7/panel/getting_started) but is tailored specifically for CentOS 8.
 :::
 
 ## Install Requirements and Additional Utilities
-We will install all of Pterodactyl's [required](/panel/getting_started.md#dependencies) dependencies and a few aditional utilities.
+
+We will install all of Pterodactyl's [required](/docs/0.7/panel/getting_started#dependencies) dependencies and a few aditional utilities.
 
 :::tip
 If you run `sestatus` and it shows `SELinux status: enabled` you should install the following packages for later
 :::
 
 ### SELinux tools
+
 ```bash
 dnf install -y policycoreutils selinux-policy selinux-policy-targeted setroubleshoot-server setools setools-console mcstrans
 ```
 
 ### MariaDB
+
 ```bash
 dnf install -y mariadb mariadb-server
 
@@ -31,6 +34,7 @@ systemctl enable mariadb
 ```
 
 ### PHP 7.2
+
 We recommend the remi repo to get the latest php packages.
 
 ```bash
@@ -42,6 +46,7 @@ dnf install -y php php-common php-fpm php-cli php-json php-mysqlnd php-gd php-mb
 ```
 
 ### Composer
+
 ```bash
 dnf install -y zip unzip tar # Required for Composer
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -49,17 +54,18 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 
 ## Install Utility Packages
 
-
 ### Nginx
+
 ```bash
 dnf install -y nginx
 
 firewall-cmd --add-service=http --permanent
-firewall-cmd --add-service=https --permanent 
+firewall-cmd --add-service=https --permanent
 firewall-cmd --reload
 ```
 
 ### Redis
+
 ```bash
 dnf install -y redis
 
@@ -69,7 +75,7 @@ systemctl enable redis
 
 #### SELinux commands
 
-The following command will allow nginx to work with redis and 
+The following command will allow nginx to work with redis.
 
 ```bash
 setsebool -P httpd_can_network_connect 1
@@ -141,4 +147,4 @@ The default Redis install is perfectly fine for the panel. If you have Redis alr
 
 ## Installing the Panel
 
-Excellent, we now have all of the required dependencies installed and configured. From here, follow the [official Panel installation documentation](/panel/getting_started.md#download-files).
+Excellent, we now have all of the required dependencies installed and configured. From here, follow the [official Panel installation documentation](/docs/0.7/panel/getting_started#download-files).

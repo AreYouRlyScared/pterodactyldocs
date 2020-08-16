@@ -98,7 +98,7 @@ and then set the correct permissions on the `storage/` and `bootstrap/cache/` di
 allow us to store files as well as keep a speedy cache available to reduce load times.
 
 ``` bash
-curl -Lo panel.tar.gz https://github.com/pterodactyl/panel/releases/download/v1.0.0-beta.5/panel.tar.gz
+curl -Lo panel.tar.gz https://github.com/pterodactyl/panel/releases/download/v1.0.0-beta.7/panel.tar.gz
 tar --strip-components=1 -xzvf panel.tar.gz
 chmod -R 755 storage/* bootstrap/cache/
 ```
@@ -109,7 +109,7 @@ Now that all of the files have been downloaded we need to configure some core as
 
 :::note Database Configuration
 You will need a database setup and a user with the correct permissions created for that database before
-continuing any further. If you are unsure how to do this, please have a look at [Setting up MySQL](/tutorials/mysql_setup.html).
+continuing any further. If you are unsure how to do this, please have a look at [Setting up MySQL](/docs/tutorials/mysql_setup).
 :::
 
 First we will copy over our default environment settings file, install core dependencies, and then generate a

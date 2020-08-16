@@ -13,7 +13,7 @@ module.exports = {
         alt: 'Pterodactyl',
         src: 'img/pterodactyl.png',
       },
-      links: [
+      items: [
         {
           to: 'docs/0.7/panel/getting_started',
           label: 'Documentation',

@@ -18,7 +18,7 @@ security between users and the Panel. You will need to get a valid SSL certifica
 Let's Encrypt.
 
 :::caution
-When using the SSL configuration you MUST create SSL certificates, otherwise your NGINX will fail to start.  See [Creating SSL Certificates](/tutorials/creating_ssl_certificates.html) documentation page for how to create these certificates before continuing.
+When using the SSL configuration you MUST create SSL certificates, otherwise your NGINX will fail to start.  See [Creating SSL Certificates](/docs/tutorials/creating_ssl_certificates) documentation page for how to create these certificates before continuing.
 :::
 
 <<< @/.snippets/webservers/nginx.conf{5,11,26-27}
@@ -49,7 +49,7 @@ Note: When using Apache, make sure you have the `libapache2-mod-php` package ins
 Like the nginx configuration, this assumes you will be using SSL on both the Panel and Daemons for improved security.
 
 :::caution
-When using the SSL configuration you MUST create SSL certificates, otherwise your Apache will fail to start.  See [Creating SSL Certificates](/tutorials/creating_ssl_certificates.html) documentation page for how to create these certificates before continuing.
+When using the SSL configuration you MUST create SSL certificates, otherwise your Apache will fail to start.  See [Creating SSL Certificates](/docs/tutorials/creating_ssl_certificates) documentation page for how to create these certificates before continuing.
 :::
 
 <<< @/.snippets/webservers/apache.conf{2,8,17-18}

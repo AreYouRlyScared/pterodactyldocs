@@ -20,6 +20,7 @@ to be installing this software.
 :::
 
 ## Supported Systems
+
 | Operating System | Version | Supported | Notes |
 | ---------------- | ------- | :-------: | ----- |
 | **Ubuntu** | 18.04 | :white_check_mark: | Documentation written assuming Ubuntu 18.04 as the base OS. |
@@ -30,6 +31,7 @@ to be installing this software.
 | | 10 | :white_check_mark: | |
 
 ## System Requirements
+
 In order to run the Daemon you will need a system capable of running Docker containers. Most VPS and almost all
 dedicated servers should be capable of running Docker, but there are edge cases.
 
@@ -56,11 +58,14 @@ VMware, Inc.
 ```
 
 ## Dependencies
+
 * curl
 * Docker
 
 ### Installing Docker
+
 For a quick install of Docker CE, you can execute the command below:
+
 ``` bash
 curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 ```
@@ -75,10 +80,11 @@ are listed below for commonly supported systems.
 :::caution Check your Kernel
 Please be aware that some hosts install a modified kernel that does not support important docker features. Please
 check your kernel by running `uname -r`. If your kernel ends in `-xxxx-grs-ipv6-64` or `-xxxx-mod-std-ipv6-64` you're
-probably using a non-supported kernel. Check our [Kernel Modifications](kernel_modifications.md) guide for details.
+probably using a non-supported kernel. Check our [Kernel Modifications](/docs/0.7/daemon/kernel_modifications) guide for details.
 :::
 
 #### Start Docker on Boot
+
 If you are on an operating system with systemd (Ubuntu 16+, Debian 8+, CentOS 7+) run the command below to have Docker start when you boot your machine.
 
 ``` bash
@@ -86,6 +92,7 @@ systemctl enable docker
 ```
 
 #### Enabling Swap
+
 On most systems, docker will be unable to setup swap space, you can check if this is the case by running `docker info`.
 If it outputs `WARNING: No swap limit support` near the bottom, this is the case. Enabling swap is completely optional,
 but we recommended doing it if you will be hosting for others, and to prevent OOM errors.
@@ -102,12 +109,13 @@ GRUB_CMDLINE_LINUX_DEFAULT="swapaccount=1"
 ```
 
 ## Installing Wings
+
 The first step for installing the daemon is to make sure we have the required directory structure setup. To do so,
 run the commands below which will create the base directory and download the wings executable.
 
 ``` bash
 mkdir -p /etc/pterodactyl
-curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/download/v1.0.0-beta.6/wings_linux_amd64
+curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/download/v1.0.0-beta.9/wings_linux_amd64
 chmod u+x /usr/local/bin/wings
 ```
 
@@ -118,14 +126,16 @@ set when creating the node.
 :::
 
 ## Configure Daemon
+
 Once you have installed the daemon and required components, the next step is to create a node on your installed Panel
 Once you have done that there will be a tab called Configuration when you view the node.
 
 Simply copy and paste the code block and paste it into a file called `config.yml` in `/etc/pterodactyl` and save it.
 
-![](./../../.vuepress/public/wings_configuration_example.png)
+![](/img/wings_configuration_example.png)
 
 ### Starting Wings
+
 To start your daemon simply move into the daemon directory and run the command below which will start the daemon in
 foreground mode. Once you are done, use `CTRL+C` to terminate the process. Depending on your server's internet connection
 pulling and starting the Daemon for the first time may take a few minutes.
@@ -137,6 +147,7 @@ sudo wings
 You may optionally add the `--debug` flag to run Wings in debug mode.
 
 ### Daemonizing (using systemd)
+
 Running Pterodactyl Daemon in the background is a simple task, just make sure that it runs without errors before doing
 this. Place the contents below in a file called `wings.service` in the `/etc/systemd/system` directory.
 

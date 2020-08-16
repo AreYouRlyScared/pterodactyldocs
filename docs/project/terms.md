@@ -25,4 +25,4 @@ created on nodes, and you can have multiple servers per node.
 
 ## Example Setup Diagram
 
-![](./../.vuepress/public/example_setup.png)
+![](/img/example_setup.png)

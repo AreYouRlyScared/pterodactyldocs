@@ -1,16 +1,16 @@
 ---
-id: cg_pl_ubuntu1804
+id: ubuntu1804
 title: Ubuntu 18.04
 sidebar_label: Ubuntu 18.04
 ---
 In this guide we will install Pterodactyl v0.7.X — including all of it's dependencies — and configure our webserver to serve it using SSL.
 
 :::tip
-This guide is based off the [official installation documentation](/panel/getting_started.md) but is tailored specifically for Ubuntu 18.04.
+This guide is based off the [official installation documentation](/docs/0.7/panel/getting_started) but is tailored specifically for Ubuntu 18.04.
 :::
 
 ## Install Requirements
-We will first begin by installing all of Pterodactyl's [required](/panel/getting_started.md#dependencies) dependencies.
+We will first begin by installing all of Pterodactyl's [required](/docs/0.7/panel/getting_started#dependencies) dependencies.
 
 ### MariaDB
 ```bash
@@ -111,4 +111,4 @@ The default Redis install is perfectly fine for the panel. If you have Redis alr
 [running another Redis instance](https://community.pivotal.io/s/article/How-to-setup-and-run-multiple-Redis-server-instances-on-a-Linux-host).
 
 ## Installing the Panel
-Excellent, we now have all of the required dependencies installed and configured. From here, follow the [official Panel installation documentation](/panel/getting_started.md#download-files).
+Excellent, we now have all of the required dependencies installed and configured. From here, follow the [official Panel installation documentation](/docs/0.7/panel/getting_started#download-files).
