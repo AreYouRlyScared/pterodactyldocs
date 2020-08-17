@@ -47,7 +47,7 @@ module.exports = {
     {
       id: 'welcome',
       content:
-        'These are still a WIP.... @AreYouScared',
+        'These are still a WIP.... Last Update: 8/17 @AreYouScared',
       backgroundColor: '#e12d39', 
       textColor: '#fff',
     },
@@ -92,7 +92,6 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
           homePageId: 'project/introduction',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
@@ -111,6 +110,30 @@ module.exports = {
         indexDocs: true,
         indexPages: true,
         language: 'en'
-    }]
+    }],
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: ['appInstalled', 'queryString'],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/pterodactyl.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(37, 194, 160)',
+          },
+        ],
+      },
+    ],
   ],
 };
