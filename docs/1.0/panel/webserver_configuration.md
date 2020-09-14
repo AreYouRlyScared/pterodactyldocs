@@ -3,6 +3,7 @@ id: webserver_configuration
 title: Webserver Configuration
 sidebar_label: Webserver Configuration
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -11,11 +12,11 @@ You should remove the default Apache or NGINX configuration as it will expose ap
 users by default.
 :::
 <Tabs
-  defaultValue="nginx"
-  values={[
-    {label: 'NGINX', value: 'nginx'},
-    {label: 'Apache', value: 'apache'}
-  ]}>
+defaultValue="nginx"
+values={[
+{label: 'NGINX', value: 'nginx'},
+{label: 'Apache', value: 'apache'}
+]}>
 <TabItem value="nginx">
 
 # NGINX
@@ -24,11 +25,11 @@ You should paste the contents of the file below, replacing `<domain>` with your 
 `pterodactyl.conf` and place it in `/etc/nginx/sites-available/`, or &mdash; if on CentOS, `/etc/nginx/conf.d/`.
 
 <Tabs
-  defaultValue="nginx"
-  values={[
-    {label: 'Nginx With SSL', value: 'nginx'},
-    {label: 'Nginx Without SSL', value: 'nginxnonssl'}
-  ]}>
+defaultValue="nginx"
+values={[
+{label: 'Nginx With SSL', value: 'nginx'},
+{label: 'Nginx Without SSL', value: 'nginxnonssl'}
+]}>
 <TabItem value="nginx">
 
 This configuration assumes that you will be using SSL on both the Panel and Daemons for significantly improved communication
@@ -36,7 +37,7 @@ security between users and the Panel. You will need to get a valid SSL certifica
 Let's Encrypt.
 
 :::caution
-When using the SSL configuration you MUST create SSL certificates, otherwise your NGINX will fail to start.  See [Creating SSL Certificates](/docs/tutorials/creating_ssl_certificates) documentation page for how to create these certificates before continuing.
+When using the SSL configuration you MUST create SSL certificates, otherwise your NGINX will fail to start. See [Creating SSL Certificates](/docs/tutorials/creating_ssl_certificates) documentation page for how to create these certificates before continuing.
 :::
 
 ```{5,11,26-27}
@@ -165,7 +166,7 @@ server {
 
 The final step is to enable your NGINX configuration and restart it.
 
-``` bash
+```bash
 # You do not need to symlink this file if you are using CentOS.
 sudo ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/pterodactyl.conf
 
@@ -185,11 +186,11 @@ You should paste the contents of the file below, replacing `<domain>` with your 
 Note: When using Apache, make sure you have the `libapache2-mod-php` package installed or else PHP will not display on your webserver.
 
 <Tabs
-  defaultValue="apache"
-  values={[
-    {label: 'Apache With SSL', value: 'apache'},
-    {label: 'Apache Without SSL', value: 'apachenonssl'}
-  ]}>
+defaultValue="apache"
+values={[
+{label: 'Apache With SSL', value: 'apache'},
+{label: 'Apache Without SSL', value: 'apachenonssl'}
+]}>
 <TabItem value="apache">
 
 ```{2,8,17-18}
@@ -234,6 +235,7 @@ Note: When using Apache, make sure you have the `libapache2-mod-php` package ins
 </Tabs>
 
 ### Enabling Configuration
+
 Once you've created the file above, simply run the commands below. If you are on CentOS _you do not need to run the commands
 below!_ You only need to run `systemctl restart httpd`.
 
@@ -243,5 +245,6 @@ sudo ln -s /etc/apache2/sites-available/pterodactyl.conf /etc/apache2/sites-enab
 sudo a2enmod rewrite
 systemctl restart apache2
 ```
+
 </TabItem>
 </Tabs>

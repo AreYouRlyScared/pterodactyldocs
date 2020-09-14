@@ -28,33 +28,33 @@ Pterodactyl does not support most OpenVZ systems due to incompatabilities with D
 this software on an OpenVZ based system you will &mdash; most likely &mdash; not be successful.
 :::
 
-| Operating System | Version | Supported | Notes |
-| ---------------- | ------- | :-------: | ----- |
-| **Ubuntu** | 18.04 | :white_check_mark: | Documentation written assuming Ubuntu 18.04 as the base OS. |
-| | 20.04 | :white_check_mark: | |
-| **CentOS** | 7 | :white_check_mark: | Extra repos are required. |
-| | 8 | :white_check_mark: | All required packages are part of the base repos. |
-| **Debian** | 9 | :white_check_mark: | Extra repos are required. |
-| | 10 | :white_check_mark: | All required packages are part of the base repos. |
+| Operating System | Version |     Supported      | Notes                                                       |
+| ---------------- | ------- | :----------------: | ----------------------------------------------------------- |
+| **Ubuntu**       | 18.04   | :white_check_mark: | Documentation written assuming Ubuntu 18.04 as the base OS. |
+|                  | 20.04   | :white_check_mark: |                                                             |
+| **CentOS**       | 7       | :white_check_mark: | Extra repos are required.                                   |
+|                  | 8       | :white_check_mark: | All required packages are part of the base repos.           |
+| **Debian**       | 9       | :white_check_mark: | Extra repos are required.                                   |
+|                  | 10      | :white_check_mark: | All required packages are part of the base repos.           |
 
 ## Dependencies
 
-* PHP `7.3+` (`7.4` recommended) with the following extensions: `cli`, `openssl`, `gd`, `mysql`, `PDO`, `mbstring`, `tokenizer`, `bcmath`, `xml` or `dom`, `curl`, `zip`, and `fpm` if you are planning to use nginx
-* MySQL `5.7.22` or higher (MySQL `8` recommended) **or** MariaDB `10.2` or higher.
-* Redis (`redis-server`)
-* A webserver (Apache, NGINX, Caddy, etc.)
-* `curl`
-* `tar`
-* `unzip`
-* `git`
-* `composer`
+- PHP `7.3+` (`7.4` recommended) with the following extensions: `cli`, `openssl`, `gd`, `mysql`, `PDO`, `mbstring`, `tokenizer`, `bcmath`, `xml` or `dom`, `curl`, `zip`, and `fpm` if you are planning to use nginx
+- MySQL `5.7.22` or higher (MySQL `8` recommended) **or** MariaDB `10.2` or higher.
+- Redis (`redis-server`)
+- A webserver (Apache, NGINX, Caddy, etc.)
+- `curl`
+- `tar`
+- `unzip`
+- `git`
+- `composer`
 
 ### Example Dependency Installation
 
 The commands below are simply an example of how you might install these dependencies. Please consult with your
 operating system's package manager to determine the correct packages to install.
 
-``` bash
+```bash
 # Add "add-apt-repository" command
 apt -y install software-properties-common curl apt-transport-https ca-certificates gnupg
 
@@ -78,7 +78,7 @@ apt -y install php7.4 php7.4-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm
 Composer is a dependency manager for PHP that allows us to ship everything you'll need code wise to operate the Panel. You'll
 need composer installed before continuing in this process.
 
-``` bash
+```bash
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 ```
 
@@ -87,7 +87,7 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 The first step in this process is to create the folder where the panel will live and then move ourselves into that
 newly created folder. Below is an example of how to perform this operation.
 
-``` bash
+```bash
 mkdir -p /var/www/pterodactyl
 cd /var/www/pterodactyl
 ```
@@ -97,7 +97,7 @@ is as simple as using `curl` to download our pre-packaged content. Once it is do
 and then set the correct permissions on the `storage/` and `bootstrap/cache/` directories. These directories
 allow us to store files as well as keep a speedy cache available to reduce load times.
 
-``` bash
+```bash
 curl -Lo panel.tar.gz https://github.com/pterodactyl/panel/releases/download/v1.0.0-beta.7/panel.tar.gz
 tar --strip-components=1 -xzvf panel.tar.gz
 chmod -R 755 storage/* bootstrap/cache/
@@ -115,7 +115,7 @@ continuing any further. If you are unsure how to do this, please have a look at 
 First we will copy over our default environment settings file, install core dependencies, and then generate a
 new application encryption key.
 
-``` bash
+```bash
 cp .env.example .env
 composer install --no-dev --optimize-autoloader
 
@@ -134,7 +134,7 @@ Store it somewhere safe - not just on your server. If you lose it, all encrypted
 Pterodactyl's core environment is easily configured using a few different CLI commands built into the app. This step
 will cover setting up things such as sessions, caching, database credentials, and email sending.
 
-``` bash
+```bash
 php artisan p:environment:setup
 php artisan p:environment:database
 
@@ -149,7 +149,7 @@ Now we need to setup all of the base data for the Panel in the database you crea
 may take some time to run depending on your machine. Please _DO NOT_ exit the process until it is completed!** This
 command will setup the database tables and then add all of the Nests & Eggs that power Pterodactyl.
 
-``` bash
+```bash
 php artisan migrate --seed
 ```
 
@@ -158,7 +158,7 @@ php artisan migrate --seed
 You'll then need to create an administrative user so that you can log into the panel. To do so, run the command below.
 At this time passwords **must** meet the following requirements: 8 characters, mixed case, at least one number.
 
-``` bash
+```bash
 php artisan p:user:make
 ```
 
@@ -167,7 +167,7 @@ php artisan p:user:make
 The last step in the installation process is to set the correct permissions on the Panel files so that the webserver can
 use them correctly.
 
-``` bash
+```bash
 # If using NGINX or Apache (not on CentOS):
 chown -R www-data:www-data *
 
@@ -205,7 +205,7 @@ installing Supervisor and setting up your queue. Ensure you use the same ExecSta
 
 Create a file called `pteroq.service` in `/etc/systemd/system` with the contents below.
 
-``` text
+```text
 # Pterodactyl Queue Worker File
 # ----------------------------------
 
@@ -241,6 +241,6 @@ sudo systemctl enable --now redis-server
 
 Finally, enable the service and set it to boot on machine start.
 
-``` bash
+```bash
 sudo systemctl enable --now pteroq.service
 ```

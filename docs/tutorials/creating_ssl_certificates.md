@@ -12,7 +12,7 @@ To begin, we will be installing certbot, a simple script that will automatically
 cleaner creation of them. The command below is for Ubuntu distributions, but you can always check [Certbot's official
 site](https://certbot.eff.org/) for installation instructions.
 
-``` bash
+```bash
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt update
 sudo apt install certbot
@@ -31,7 +31,7 @@ command. You can also look into generating a wildcard certificate but that is no
 Once you've generated the certificate you should start NGINX or Apache again to have the certificates applied (assuming
 that you've already configured the webservers to use SSL).
 
-``` bash
+```bash
 certbot certonly -d example.com
 ```
 
@@ -41,7 +41,7 @@ You'll also probably want to configure automatic renewal by adding the command b
 You can add the command below to that crontab. For advanced users, we suggest installing and using [acme.sh](https://acme.sh)
 which provides more options (see below), and is much more powerful than certbot.
 
-``` text
+```text
 certbot renew
 ```
 
@@ -73,7 +73,7 @@ systemctl start nginx
 
 This is for advanced users, of which their server systems do not have access to port 80. The command below is for Ubuntu distributions and CloudFlare API (you may google for other APIs for other DNS providers), but you can always check [acme.sh's official site](https://github.com/Neilpang/acme.sh) for installation instructions.
 
-``` bash
+```bash
 curl https://get.acme.sh | sh
 ```
 
@@ -101,7 +101,7 @@ Then create the certificate.
 ```bash
 acme.sh --issue --standalone -d "example.com" --dns dns_cf \
 --key-file /etc/letsencrypt/live/example.com/privkey.pem \
---fullchain-file /etc/letsencrypt/live/example.com/fullchain.pem 
+--fullchain-file /etc/letsencrypt/live/example.com/fullchain.pem
 ```
 
 ### Auto Renewal

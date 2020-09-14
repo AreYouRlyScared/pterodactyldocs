@@ -3,6 +3,7 @@ id: creating_a_custom_image
 title: Creating a Custom Docker Image
 sidebar_label: Creating a Custom Docker Image
 ---
+
 :::caution
 This tutorial uses examples from our [core:java](https://github.com/pterodactyl/images/tree/java) docker image,
 which can be found on Github. This tutorial also assumes some knowledge of [Docker](https://docker.io/), we suggest
@@ -10,6 +11,7 @@ reading up if this all looks foreign to you.
 :::
 
 ## Creating the Dockerfile
+
 The most important part of this process is to create the [`Dockerfile`](https://docs.docker.com/engine/reference/builder/)
 that will be used by the Daemon. Due to heavy restrictions on server containers, you must setup this file in a specific manner.
 
@@ -47,17 +49,19 @@ FROM openjdk:8-jdk-alpine
 In this case, we are using [`openjdk:8-jdk-alpine`](https://github.com/docker-library/openjdk) which provides us with Java 8.
 
 ## Installing Dependencies
+
 The next thing we do is install the dependencies we will need using Alpine's package manager: `apk`. You'll notice some
 specific flags that keep the container small, including `--no-cache`, as well as everything being contained in a
 single [`RUN`](https://docs.docker.com/engine/reference/builder/#run) block.
 
-
 ## Creating a Container User
+
 Within this `RUN` block, you'll notice the `useradd` command.
 
 ```bash
 adduser -D -h /home/container container
 ```
+
 :::warning
 All Pterodactyl containers must have a user named `container`, and the user home **must** be `/home/container`.
 :::
@@ -67,6 +71,7 @@ as well as a few [`ENV`](https://docs.docker.com/engine/reference/builder/#env) 
 within the container.
 
 ## Work Directory & Entrypoint
+
 One of the last things we do is define a [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir) which
 is where everything else will be executed. The `WORKDIR` must be set the `/home/container`.
 
@@ -81,6 +86,7 @@ CMD ["/bin/bash", "/entrypoint.sh"]
 ```
 
 ## Entrypoint Script
+
 In order to complete this `Dockerfile`, we will need an `entrypoint.sh` file which tells Docker how to run this
 specific server type.
 
@@ -106,6 +112,7 @@ The second command, `cd /home/container`, simply ensures we are in the correct d
 commands. We then follow that up with `java -version` to output this information to end-users, but that is not necessary.
 
 ## Modifying the Startup Command
+
 The most significant part of this file is the `MODIFIED_STARTUP` environment variable. What we are doing in this case
 is parsing the environment `STARTUP` that is passed into the container by the Daemon. In most cases, this variable
 looks something like the example below:
@@ -123,7 +130,7 @@ SERVER_JARFILE=server.jar
 ```
 
 There are a host of different environment variables, and they change depending on the specific service option
-configuration. However, that is not necessarily anything to worry about here. 
+configuration. However, that is not necessarily anything to worry about here.
 
 ```bash
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
@@ -143,4 +150,5 @@ java -Xms128M -Xmx1024M -jar server.jar
 ```
 
 ## Run the Command
+
 The last step is to run this modified startup command, which is done with the line `${MODIFIED_STARTUP}`.

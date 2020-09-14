@@ -21,14 +21,14 @@ to be installing this software.
 
 ## Supported Systems
 
-| Operating System | Version | Supported | Notes |
-| ---------------- | ------- | :-------: | ----- |
-| **Ubuntu** | 18.04 | :white_check_mark: | Documentation written assuming Ubuntu 18.04 as the base OS. |
-| | 20.04 | :white_check_mark: | |
-| **CentOS** | 7 | :white_check_mark: | |
-| | 8 | :white_check_mark: | |
-| **Debian** | 9 | :white_check_mark: | |
-| | 10 | :white_check_mark: | |
+| Operating System | Version |     Supported      | Notes                                                       |
+| ---------------- | ------- | :----------------: | ----------------------------------------------------------- |
+| **Ubuntu**       | 18.04   | :white_check_mark: | Documentation written assuming Ubuntu 18.04 as the base OS. |
+|                  | 20.04   | :white_check_mark: |                                                             |
+| **CentOS**       | 7       | :white_check_mark: |                                                             |
+|                  | 8       | :white_check_mark: |                                                             |
+| **Debian**       | 9       | :white_check_mark: |                                                             |
+|                  | 10      | :white_check_mark: |                                                             |
 
 ## System Requirements
 
@@ -43,39 +43,39 @@ If you want to take a different approach, try using `lscpu` and checking what th
 example of this is shown below which shows my hypervisor running with full virtualization — this means it will
 support Docker without issues. If you see `KVM` for the vendor, chances are you're fine as well.
 
-``` bash
+```bash
 dane@daemon:~$ lscpu | grep 'vendor\|type'
 Hypervisor vendor:     VMware
 Virtualization type:   full
 ```
 
-If that doesn't work for some reason, or you're still unsure, you can also run the command below and as long as it 
+If that doesn't work for some reason, or you're still unsure, you can also run the command below and as long as it
 doesn't report `Xen` or `LXC` you're probably okay to continue.
 
-``` bash
+```bash
 dane@daemon:~$ sudo dmidecode -s system-manufacturer
 VMware, Inc.
 ```
 
 ## Dependencies
 
-* curl
-* Docker
+- curl
+- Docker
 
 ### Installing Docker
 
 For a quick install of Docker CE, you can execute the command below:
 
-``` bash
+```bash
 curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 ```
 
 If you would rather do a manual installation, please reference the official Docker documentation for how to install Docker CE on your server. Some quick links
 are listed below for commonly supported systems.
 
-* [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
-* [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
-* [Debian](https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce)
+- [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
+- [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
+- [Debian](https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce)
 
 :::caution Check your Kernel
 Please be aware that some hosts install a modified kernel that does not support important docker features. Please
@@ -87,7 +87,7 @@ probably using a non-supported kernel. Check our [Kernel Modifications](/docs/0.
 
 If you are on an operating system with systemd (Ubuntu 16+, Debian 8+, CentOS 7+) run the command below to have Docker start when you boot your machine.
 
-``` bash
+```bash
 systemctl enable docker
 ```
 
@@ -104,7 +104,7 @@ After doing that, simply run `sudo update-grub` followed by `sudo reboot` to res
 Below is an example of what the line should look like, _do not copy this line verbatium, it often has additional
 OS specific parameters._
 
-``` text
+```text
 GRUB_CMDLINE_LINUX_DEFAULT="swapaccount=1"
 ```
 
@@ -113,7 +113,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="swapaccount=1"
 The first step for installing the daemon is to make sure we have the required directory structure setup. To do so,
 run the commands below which will create the base directory and download the wings executable.
 
-``` bash
+```bash
 mkdir -p /etc/pterodactyl
 curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/download/v1.0.0-beta.9/wings_linux_amd64
 chmod u+x /usr/local/bin/wings
@@ -140,7 +140,7 @@ To start your daemon simply move into the daemon directory and run the command b
 foreground mode. Once you are done, use `CTRL+C` to terminate the process. Depending on your server's internet connection
 pulling and starting the Daemon for the first time may take a few minutes.
 
-``` bash
+```bash
 sudo wings
 ```
 
@@ -151,7 +151,7 @@ You may optionally add the `--debug` flag to run Wings in debug mode.
 Running Pterodactyl Daemon in the background is a simple task, just make sure that it runs without errors before doing
 this. Place the contents below in a file called `wings.service` in the `/etc/systemd/system` directory.
 
-``` text
+```text
 [Unit]
 Description=Pterodactyl Wings Daemon
 After=docker.service
@@ -171,6 +171,6 @@ WantedBy=multi-user.target
 
 Then, run the commands below to reload systemd and start the daemon.
 
-``` bash
+```bash
 systemctl enable --now wings
 ```

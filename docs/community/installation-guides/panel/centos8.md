@@ -3,6 +3,7 @@ id: centos8
 title: CentOS 8
 sidebar_label: CentOS 8
 ---
+
 In this guide we will install Pterodactyl v0.7.X — including all of it's dependencies — and configure our webserver to serve it using SSL.
 
 :::tip

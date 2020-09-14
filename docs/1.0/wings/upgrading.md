@@ -3,9 +3,11 @@ id: upgrade_wings
 title: Upgrading Wings
 sidebar_label: Upgrade
 ---
+
 Upgrading Wings is a painless process and should take less than a minute to complete.
 
 ## Move Old Settings
+
 :::caution
 As of `wings@1.0.0-beta.5` we have moved the default location for the configuration
 to be in `/etc/pterodactyl`. Please take note of this when performing the upgrade!
@@ -14,7 +16,7 @@ to be in `/etc/pterodactyl`. Please take note of this when performing the upgrad
 This process only needs to be executed if upgrading from `wings@1.0.0-beta.4` or before. You can
 skip to the download process below if you're already on at least `beta.5`.
 
-``` bash
+```bash
 # Create the new pterodactyl data directory.
 mkdir -p /etc/pterodactyl
 
@@ -30,9 +32,10 @@ the daemon to move it automatically for you. I recommend moving it now, and then
 directory as it is no longer needed.
 
 ## Download Updated Binary
+
 First, download the updated wings binary into `/usr/local/bin`.
 
-``` bash
+```bash
 curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/download/v1.0.0-beta.6/wings_linux_amd64
 chmod u+x /usr/local/bin/wings
 ```
@@ -43,9 +46,10 @@ You should delete `/etc/pterodactyl/wings` after downloading the latest binary t
 :::
 
 ## Restart Process
+
 Finally, restart the wings process. Your running servers will not be affected and any open
 connections to the instance will re-connect automatically.
 
-``` bash
+```bash
 systemctl restart wings
 ```

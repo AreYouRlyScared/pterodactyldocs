@@ -3,6 +3,7 @@ id: centos7
 title: CentOS 7
 sidebar_label: CentOS 7
 ---
+
 In this guide we will install Pterodactyl's Daemon v0.6.X — including all of it's dependencies — and configure it to use a SSL connection.
 
 :::tip

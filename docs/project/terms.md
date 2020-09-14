@@ -3,6 +3,7 @@ id: terminology
 title: Terminology
 sidebar_label: Terminology
 ---
+
 **Panel** — This refers to Pterodactyl Panel itself, and is what allows you to add additional
 nodes and servers to the system.
 
@@ -19,9 +20,7 @@ created on nodes, and you can have multiple servers per node.
 
 **Nest** — Each nest is usually used as a specific game or service, for example: Minecraft, Teamspeak or Terraria and can contain many eggs.
 
-**Egg**  — Each egg is usually used to store the configuration of a specific type of game, for example: Vanilla, Spigot or Bungeecord for Minecraft.
-
-
+**Egg** — Each egg is usually used to store the configuration of a specific type of game, for example: Vanilla, Spigot or Bungeecord for Minecraft.
 
 ## Example Setup Diagram
 

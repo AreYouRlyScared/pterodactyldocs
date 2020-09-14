@@ -16,7 +16,7 @@ The first step in this process is to login to the MySQL command line where we wi
 things setup. To do so, simply run the command below and provide the Root MySQL account's password that you setup when
 installing MySQL. If you do not remember doing this, chances are you can just hit enter as no password is set.
 
-``` bash
+```bash
 mysql -u root -p
 ```
 
@@ -29,7 +29,7 @@ Next, we will create a user called `pterodactyl` and allow logins from localhost
 to our database. You can also use `%` as a wildcard or enter a numeric IP. We will also set the account password
 to `somePassword`.
 
-``` sql
+```sql
 USE mysql;
 
 # Remember to change 'somePassword' below to be a unique password specific to this account.
@@ -41,7 +41,7 @@ CREATE USER 'pterodactyl'@'127.0.0.1' IDENTIFIED BY 'somePassword';
 Next, we need to create a database for the panel. In this tutorial we will be naming the database `panel`, but you can
 substitute that for whatever name you wish.
 
-``` sql
+```sql
 CREATE DATABASE panel;
 ```
 
@@ -52,7 +52,7 @@ run the command below. If you plan on also using this MySQL instance as a databa
 include the `WITH GRANT OPTION` (which we are doing here). If you won't be using this user as part of the host setup
 you can remove that.
 
-``` sql
+```sql
 GRANT ALL PRIVILEGES ON panel.* TO 'pterodactyl'@'127.0.0.1' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```

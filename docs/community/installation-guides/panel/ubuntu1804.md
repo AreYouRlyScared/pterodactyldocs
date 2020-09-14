@@ -3,6 +3,7 @@ id: ubuntu1804
 title: Ubuntu 18.04
 sidebar_label: Ubuntu 18.04
 ---
+
 In this guide we will install Pterodactyl v0.7.X — including all of it's dependencies — and configure our webserver to serve it using SSL.
 
 :::tip
@@ -10,9 +11,11 @@ This guide is based off the [official installation documentation](/docs/0.7/pane
 :::
 
 ## Install Requirements
+
 We will first begin by installing all of Pterodactyl's [required](/docs/0.7/panel/getting_started#dependencies) dependencies.
 
 ### MariaDB
+
 ```bash
 ## Get apt updates
 apt update -y
@@ -26,6 +29,7 @@ systemctl enable mariadb
 ```
 
 ### PHP 7.2
+
 ```bash
 ## Get apt updates
 apt update -y
@@ -35,11 +39,13 @@ apt install -y php7.2 php7.2-cli php7.2-gd php7.2-mysql php7.2-pdo php7.2-mbstri
 ```
 
 ### Nginx
+
 ```bash
 apt install -y nginx
 ```
 
 ### Redis
+
 ```bash
 apt install -y redis-server
 
@@ -50,19 +56,23 @@ systemctl enable redis-server
 ### Additional Utilities
 
 #### Certbot
+
 ```bash
 apt install -y certbot
 ```
 
 #### Composer
+
 ```bash
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 ```
 
 ## Server Configuration
+
 This following section covers the configuration of parts of the server to run the panel.
 
 ### Configuring MariaDB
+
 The fastest way to set up MariaDB is to use the `mysql_secure_installation` command and follow prompts
 
 ```bash
@@ -89,9 +99,11 @@ Clears and sets all the changes made
 All done! If you've completed all of the above steps, your MariaDB installation should now be secure.
 
 #### Adding MariaDB user
+
 To add your first user to the database, see our tutorial on [setting up MySQL](/tutorials/mysql_setup.md).
 
 ### Setup PHP
+
 The default php-fpm configuration is fine to use and can be started and then enabled on the system using the
 commands below.
 
@@ -101,14 +113,18 @@ systemctl start php7.2-fpm
 ```
 
 ### Nginx
+
 Please check our [tutorial](/tutorials/creating_ssl_certificates.md) on generating SSL certificates for more information.
 
 #### SSL Configuration
+
 <<< @/.snippets/webservers/nginx.conf{5,11,26-27}
 
 ### Redis Setup
+
 The default Redis install is perfectly fine for the panel. If you have Redis already in use you may want to look into
 [running another Redis instance](https://community.pivotal.io/s/article/How-to-setup-and-run-multiple-Redis-server-instances-on-a-Linux-host).
 
 ## Installing the Panel
+
 Excellent, we now have all of the required dependencies installed and configured. From here, follow the [official Panel installation documentation](/docs/0.7/panel/getting_started#download-files).

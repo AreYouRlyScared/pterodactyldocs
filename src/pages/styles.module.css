@@ -107,7 +107,7 @@ div.tabs ul {
 
 .changelogSearchInput::placeholder {
   color: var(--ifm-font-color-base);
-  opacity: 1; 
+  opacity: 1;
 }
 
 .changelog .tabs__item {

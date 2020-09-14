@@ -3,17 +3,18 @@ id: about
 title: About
 sidebar_label: About
 ---
+
 ## Core Project Team
 
-| Name | Discord Name | Primary Role |
-| ---- | ------------ | ---- |
-| [Dane Everitt](https://daneeveritt.com/) | `Tactical Fish#8008` | Project Maintainer |
-| Anand Capur | `Arcdigital#1337` | Mobile/Cloud Project Lead |
-| Michael Parker | `parkervcp#6789` | Egg Developer, Docker Integration |
-| [Jakob Schrettenbrunner](https://schrej.net/) | `schrej#1337` | Developer |
-| Stepan Fedotov | `Trixter#0001` | WHMCS Module Maintainer |
-| [Lance Pioch](https://lancepioch.com/) | `ShadowLancer#5209` | Developer |
-| [Matthew Penner](https://matthewp.io/) | `matthewp#0001` | Developer |
+| Name                                          | Discord Name         | Primary Role                      |
+| --------------------------------------------- | -------------------- | --------------------------------- |
+| [Dane Everitt](https://daneeveritt.com/)      | `Tactical Fish#8008` | Project Maintainer                |
+| Anand Capur                                   | `Arcdigital#1337`    | Mobile/Cloud Project Lead         |
+| Michael Parker                                | `parkervcp#6789`     | Egg Developer, Docker Integration |
+| [Jakob Schrettenbrunner](https://schrej.net/) | `schrej#1337`        | Developer                         |
+| Stepan Fedotov                                | `Trixter#0001`       | WHMCS Module Maintainer           |
+| [Lance Pioch](https://lancepioch.com/)        | `ShadowLancer#5209`  | Developer                         |
+| [Matthew Penner](https://matthewp.io/)        | `matthewp#0001`      | Developer                         |
 
 ## Community Team
 

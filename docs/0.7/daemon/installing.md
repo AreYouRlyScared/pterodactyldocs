@@ -3,16 +3,17 @@ id: installing
 title: Installing
 sidebar_label: Installing
 ---
+
 ## Supported Systems
 
-| Operating System | Version | Supported | Notes |
-| ---------------- | ------- | :-------: | ----- |
-| **Ubuntu** | 18.04 | :white_check_mark: | Documentation written assuming Ubuntu 18.04 as the base OS. |
-| | [20.04](/docs/community/installation-guides/daemon/ubuntu2004) | :white_check_mark: |
-| **CentOS** | [7](/docs/community/installation-guides/daemon/centos7) | :warning: | Extra repos are required |
-| | [8](/docs/community/installation-guides/daemon/centos8) | :white_check_mark: | |
-| **Debian** | [9](/docs/community/installation-guides/daemon/debian9) | :white_check_mark: | |
-| | [10](/docs/community/installation-guides/daemon/debian10) | :white_check_mark: | |
+| Operating System | Version                                                        |     Supported      | Notes                                                       |
+| ---------------- | -------------------------------------------------------------- | :----------------: | ----------------------------------------------------------- |
+| **Ubuntu**       | 18.04                                                          | :white_check_mark: | Documentation written assuming Ubuntu 18.04 as the base OS. |
+|                  | [20.04](/docs/community/installation-guides/daemon/ubuntu2004) | :white_check_mark: |
+| **CentOS**       | [7](/docs/community/installation-guides/daemon/centos7)        |     :warning:      | Extra repos are required                                    |
+|                  | [8](/docs/community/installation-guides/daemon/centos8)        | :white_check_mark: |                                                             |
+| **Debian**       | [9](/docs/community/installation-guides/daemon/debian9)        | :white_check_mark: |                                                             |
+|                  | [10](/docs/community/installation-guides/daemon/debian10)      | :white_check_mark: |                                                             |
 
 ## System Requirements
 
@@ -27,16 +28,16 @@ If you want to take a different approach, try using `lscpu` and checking what th
 example of this is shown below which shows my hypervisor running with full virtualization — this means it will
 support Docker without issues. If you see `KVM` for the vendor, chances are you're fine as well.
 
-``` bash
+```bash
 dane@daemon:~$ lscpu | grep 'vendor\|type'
 Hypervisor vendor:     VMware
 Virtualization type:   full
 ```
 
-If that doesn't work for some reason, or you're still unsure, you can also run the command below and as long as it 
+If that doesn't work for some reason, or you're still unsure, you can also run the command below and as long as it
 doesn't report `Xen` or `LXC` you're probably okay to continue.
 
-``` bash
+```bash
 dane@daemon:~$ sudo dmidecode -s system-manufacturer
 VMware, Inc.
 ```
@@ -45,28 +46,28 @@ VMware, Inc.
 
 Pterodactyl's Daemon requires the following dependencies be installed on your system in order for it to operate.
 
-* Docker
-* Nodejs (`v10`, `v12`, higher versions likely work, but are untested)
-* `node-gyp`
-* `tar`
-* `unzip`
-* `make`, `gcc` (`gcc-c++` on CentOS), `g++`
-* `python`
+- Docker
+- Nodejs (`v10`, `v12`, higher versions likely work, but are untested)
+- `node-gyp`
+- `tar`
+- `unzip`
+- `make`, `gcc` (`gcc-c++` on CentOS), `g++`
+- `python`
 
 ### Installing Docker
 
 For a quick install of Docker CE, you can execute the command below:
 
-``` bash
+```bash
 curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 ```
 
 If you would rather do a manual installation, please reference the official Docker documentation for how to install Docker CE on your server. Some quick links
 are listed below for commonly supported systems.
 
-* [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
-* [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
-* [Debian](https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce)
+- [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
+- [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
+- [Debian](https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce)
 
 :::caution Check your Kernel
 Please be aware that some hosts install a modified kernel that does not support important docker features. Please
@@ -78,7 +79,7 @@ probably using a non-supported kernel. Check our [Kernel Modifications](kernel_m
 
 If you are on an operating system with systemd (Ubuntu 16+, Debian 8+, CentOS 7+) run the command below to have Docker start when you boot your machine.
 
-``` bash
+```bash
 systemctl enable docker
 ```
 
@@ -95,7 +96,7 @@ After doing that, simply run `sudo update-grub` followed by `sudo reboot` to res
 Below is an example of what the line should look like, _do not copy this line verbatium, it often has additional
 OS specific parameters._
 
-``` text
+```text
 GRUB_CMDLINE_LINUX_DEFAULT="swapaccount=1"
 ```
 
@@ -103,7 +104,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="swapaccount=1"
 
 NodeJS is also super easy to install! Simply run the command below to make the package accessible to your system.
 
-``` bash
+```bash
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 apt -y install nodejs make gcc g++
 ```
@@ -118,7 +119,7 @@ instructions provided by Nodejs](https://nodejs.org/en/download/package-manager/
 The first step for installing the daemon is to make sure we have the required directory structure setup. To do so,
 run the commands below.
 
-``` bash
+```bash
 mkdir -p /srv/daemon /srv/daemon-data
 cd /srv/daemon
 ```
@@ -131,7 +132,7 @@ set when creating the node.
 
 The next step is to download the software and unpack the archive.
 
-``` bash
+```bash
 curl -L https://github.com/pterodactyl/daemon/releases/download/v0.6.13/daemon.tar.gz | tar --strip-components=1 -xzv
 ```
 
@@ -143,7 +144,7 @@ You may see output along the lines of "found 14 vulnerabilities (6 low, 3 modera
 You can safely ignore this output. Do not run the audit fix command, you _will_ break your Daemon.
 :::
 
-``` bash
+```bash
 npm install --only=production --no-audit --unsafe-perm
 ```
 
@@ -163,7 +164,7 @@ To start your daemon simply move into the daemon directory and run the command b
 foreground mode. Once you are done, use `CTRL+C` to terminate the process. Depending on your server's internet connection
 pulling and starting the Daemon for the first time may take a few minutes.
 
-``` bash
+```bash
 sudo npm start
 ```
 
@@ -172,7 +173,7 @@ sudo npm start
 Running Pterodactyl Daemon in the background is a simple task, just make sure that it runs without errors before doing
 this. Place the contents below in a file called `wings.service` in the `/etc/systemd/system` directory.
 
-``` text
+```text
 [Unit]
 Description=Pterodactyl Wings Daemon
 After=docker.service
@@ -193,6 +194,6 @@ WantedBy=multi-user.target
 
 Then, run the commands below to reload systemd and start the daemon.
 
-``` bash
+```bash
 systemctl enable --now wings
 ```

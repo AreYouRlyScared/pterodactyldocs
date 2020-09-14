@@ -3,6 +3,7 @@ id: upgrading
 title: Upgrading
 sidebar_label: Upgrading
 ---
+
 Upgrading the Panel is a relatively simple process. Below you will find a list of articles that will walk you through
 the upgrade process for each version of the software.
 
@@ -11,7 +12,7 @@ the upgrade process for each version of the software.
 Whenever you are performing an upgrade, you should be sure to place your Panel into "maintenance mode". This will prevent
 users from encountering unexpected errors, and ensure everything can be upgraded before users encounter potentially new features.
 
-``` bash
+```bash
 # Put the Panel into maintenance mode and deny user access
 php artisan down
 
@@ -23,12 +24,12 @@ php artisan up
 
 After _every_ update, you should restart the queue worker to ensure that the new code is being loaded in and used.
 
-``` bash
+```bash
 php artisan queue:restart
 ```
 
 ## Version Specific Guides
 
-* [0.6.X to 0.7.17](upgrade/0.6_to_0.7.md)
-* [0.7.X series](upgrade/0.7.md) <Badge text="current" vertical="middle"/>
-* [0.7.17 to 1.0.X](upgrade/0.7_to_1.0.md) <Badge text="alpha release" vertical="middle"/>
+- [0.6.X to 0.7.17](upgrade/0.6_to_0.7.md)
+- [0.7.X series](upgrade/0.7.md) <Badge text="current" vertical="middle"/>
+- [0.7.17 to 1.0.X](upgrade/0.7_to_1.0.md) <Badge text="alpha release" vertical="middle"/>

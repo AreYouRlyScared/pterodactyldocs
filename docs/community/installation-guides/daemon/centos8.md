@@ -3,6 +3,7 @@ id: centos8
 title: CentOS 8
 sidebar_label: CentOS 8
 ---
+
 In this guide we will install Pterodactyl's Daemon v0.6.X — including all of it's dependencies — and configure it to use a SSL connection.
 
 :::tip
@@ -10,9 +11,11 @@ This guide is based off the [official installation documentation](/docs/0.7/daem
 :::
 
 ## Install Requirements
+
 We will first begin by installing all of the Daemon's [required](/docs/0.7/daemon/installing#dependencies) dependencies.
 
 ### General Requirements
+
 ```bash
 dnf install -y tar unzip make gcc gcc-c++ python2
 
@@ -39,6 +42,7 @@ dnf install -y nodejs
 ```
 
 ### FirewallD changes
+
 ```bash
 firewall-cmd --add-port 8080/tcp --permanent
 firewall-cmd --add-port 2022/tcp --permanent
@@ -48,4 +52,5 @@ firewall-cmd --reload
 ```
 
 ## Installing the Daemon
+
 Great, now all of the dependencies and firewall rules have been dealt with. From here follow the [official Daemon installation documentation](/docs/0.7/daemon/installing#installing-daemon-software).
